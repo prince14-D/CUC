@@ -137,6 +137,74 @@ h3 {
     color: var(--color-cardinal-dark);
 }
 
+.nav-dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    border: 0;
+    background: transparent;
+    color: var(--color-ink);
+    font-weight: 600;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.dropdown-toggle::after {
+    content: '\25BE';
+    font-size: 0.72rem;
+    line-height: 1;
+    transition: transform 0.2s ease;
+}
+
+.dropdown-toggle:hover,
+.dropdown-toggle:focus-visible {
+    background: rgba(140, 21, 21, 0.1);
+    color: var(--color-cardinal-dark);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    min-width: 220px;
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    box-shadow: var(--shadow-soft);
+    padding: 6px;
+    display: grid;
+    gap: 2px;
+    opacity: 0;
+    transform: translateY(-8px);
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.dropdown-menu a {
+    display: block;
+}
+
+.nav-dropdown:hover .dropdown-menu,
+.nav-dropdown:focus-within .dropdown-menu,
+.nav-dropdown.is-open .dropdown-menu {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.nav-dropdown:hover .dropdown-toggle::after,
+.nav-dropdown:focus-within .dropdown-toggle::after,
+.nav-dropdown.is-open .dropdown-toggle::after {
+    transform: rotate(180deg);
+}
+
 .portal-btn {
     background: var(--color-cardinal);
     color: #fff !important;
@@ -172,20 +240,32 @@ h3 {
     pointer-events: none;
     transform: scale(1.015);
     transition: opacity 0.55s ease, transform 0.9s ease;
-    background: var(--bg);
+    overflow: hidden;
+}
+
+.slide-media {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.04);
+    filter: saturate(0.95);
 }
 
 .slide::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: repeating-linear-gradient(
-        -30deg,
-        rgba(255, 255, 255, 0.08),
-        rgba(255, 255, 255, 0.08) 3px,
-        transparent 3px,
-        transparent 26px
-    );
+    background:
+        linear-gradient(120deg, rgba(20, 27, 45, 0.8), rgba(140, 21, 21, 0.72)),
+        repeating-linear-gradient(
+            -30deg,
+            rgba(255, 255, 255, 0.08),
+            rgba(255, 255, 255, 0.08) 3px,
+            transparent 3px,
+            transparent 26px
+        );
 }
 
 .slide.is-active {
@@ -264,29 +344,6 @@ h3 {
     color: var(--color-ink);
 }
 
-.slider-controls {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 26px;
-    z-index: 5;
-    display: flex;
-    justify-content: flex-end;
-    gap: 10px;
-}
-
-.slider-btn {
-    width: 46px;
-    height: 46px;
-    border-radius: 50%;
-    border: 0;
-    font-size: 1.2rem;
-    cursor: pointer;
-    background: rgba(255, 255, 255, 0.2);
-    color: #fff;
-    backdrop-filter: blur(4px);
-}
-
 .slider-dots {
     position: absolute;
     bottom: 34px;
@@ -322,10 +379,184 @@ h3 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
+.stat-card {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 12px;
+    padding: 14px;
+    transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.stat-number {
+    opacity: 0.65;
+    transition: opacity 0.35s ease;
+}
+
+.stats-band.is-visible .stat-number {
+    opacity: 1;
+}
+
 .stats-grid strong {
     display: block;
     font-family: 'Merriweather', serif;
     font-size: clamp(1.5rem, 3vw, 2.15rem);
+}
+
+.president-section {
+    background: linear-gradient(180deg, #ffffff, rgba(246, 243, 237, 0.45));
+}
+
+.president-grid {
+    display: grid;
+    grid-template-columns: minmax(220px, 340px) 1fr;
+    gap: 30px;
+    align-items: center;
+}
+
+.president-photo-wrap {
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-soft);
+    background: #fff;
+}
+
+.president-photo {
+    width: 100%;
+    height: 100%;
+    min-height: 360px;
+    object-fit: cover;
+}
+
+.president-message {
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 26px;
+    box-shadow: var(--shadow-soft);
+}
+
+.president-signature {
+    margin-top: 20px;
+    color: var(--color-ink-soft);
+}
+
+.campus-life-grid {
+    display: grid;
+    grid-template-columns: minmax(240px, 420px) 1fr;
+    gap: 28px;
+    align-items: stretch;
+}
+
+.campus-life-media {
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-soft);
+}
+
+.campus-life-media img {
+    width: 100%;
+    height: 100%;
+    min-height: 420px;
+    object-fit: cover;
+}
+
+.campus-life-content {
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 24px;
+    box-shadow: var(--shadow-soft);
+}
+
+.campus-life-highlights {
+    display: grid;
+    gap: 14px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 16px;
+}
+
+.campus-item {
+    background: rgba(246, 243, 237, 0.6);
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    padding: 14px;
+}
+
+.campus-item h3 {
+    font-size: 1.05rem;
+    margin-bottom: 6px;
+}
+
+.why-video-section {
+    background: linear-gradient(180deg, rgba(246, 243, 237, 0.45), #fff);
+}
+
+.why-video-grid {
+    display: grid;
+    grid-template-columns: minmax(260px, 1fr) minmax(300px, 1fr);
+    gap: 22px;
+    align-items: start;
+}
+
+.youtube-card,
+.why-choose-card {
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 22px;
+    box-shadow: var(--shadow-soft);
+}
+
+.youtube-embed {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 10px 0 8px;
+}
+
+.youtube-embed iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.video-note {
+    margin: 0;
+    color: var(--color-ink-soft);
+    font-size: 0.92rem;
+}
+
+.why-points-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.why-point {
+    background: rgba(246, 243, 237, 0.62);
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    padding: 12px;
+}
+
+.why-point h4 {
+    margin: 0 0 6px;
+    font-size: 1rem;
+}
+
+.why-point p {
+    margin: 0;
 }
 
 .section {
@@ -374,6 +605,59 @@ h3 {
 .program-list {
     display: grid;
     gap: 14px;
+}
+
+.global-partners-section {
+    background:
+        radial-gradient(circle at 10% 8%, rgba(140, 21, 21, 0.08), transparent 28%),
+        radial-gradient(circle at 90% 90%, rgba(20, 27, 45, 0.08), transparent 30%),
+        #fff;
+}
+
+.partners-grid {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.partner-card {
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 22px;
+    box-shadow: var(--shadow-soft);
+}
+
+.partner-card h3 {
+    margin-bottom: 8px;
+}
+
+.partner-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.partner-logo {
+    width: 56px;
+    height: 56px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid var(--color-border);
+    background: #fff;
+}
+
+.partner-brand h3 {
+    margin: 0;
+}
+
+.partners-cta {
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
 }
 
 .news-grid {
@@ -468,6 +752,36 @@ h3 {
 .cta-inner {
     text-align: center;
     max-width: 760px;
+    margin: 0 auto;
+}
+
+.cta-inner p {
+    max-width: 62ch;
+    margin: 0 auto;
+}
+
+.cta .btn-row {
+    justify-content: center;
+}
+
+.downloads-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.download-card {
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-soft);
+    padding: 24px;
+    text-align: center;
+}
+
+.download-card p {
+    max-width: 44ch;
+    margin: 0 auto 16px;
 }
 
 .site-footer {
@@ -535,7 +849,49 @@ h3 {
         padding: 12px;
     }
 
+    .nav-dropdown {
+        width: 100%;
+    }
+
+    .dropdown-toggle {
+        width: 100%;
+        text-align: left;
+        padding: 12px;
+    }
+
+    .dropdown-menu {
+        position: static;
+        min-width: 0;
+        border: 0;
+        box-shadow: none;
+        background: transparent;
+        padding: 0 0 4px 12px;
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+        transform: none;
+        pointer-events: none;
+        transition: max-height 0.2s ease, opacity 0.2s ease;
+    }
+
+    .nav-dropdown.is-open .dropdown-menu {
+        opacity: 1;
+        max-height: 520px;
+        pointer-events: auto;
+    }
+
+    .dropdown-menu a {
+        padding: 10px 12px;
+    }
+
     .stats-grid,
+    .president-grid,
+    .campus-life-grid,
+    .campus-life-highlights,
+    .why-video-grid,
+    .why-points-grid,
+    .partners-grid,
+    .downloads-grid,
     .feature-grid,
     .split-layout,
     .news-grid,
@@ -551,11 +907,6 @@ h3 {
 
     .slide-content {
         padding-top: 90px;
-    }
-
-    .slider-controls {
-        justify-content: center;
-        bottom: 60px;
     }
 
     .slider-dots {

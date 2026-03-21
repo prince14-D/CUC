@@ -9,12 +9,118 @@ document.addEventListener('DOMContentLoaded', function () {
 			mainNav.classList.toggle('is-open');
 		});
 
+		var dropdowns = mainNav.querySelectorAll('.nav-dropdown');
+		dropdowns.forEach(function (dropdown) {
+			var toggle = dropdown.querySelector('.dropdown-toggle');
+			if (!toggle) {
+				return;
+			}
+
+			toggle.addEventListener('click', function (event) {
+				event.preventDefault();
+				event.stopPropagation();
+				var expanded = toggle.getAttribute('aria-expanded') === 'true';
+				dropdowns.forEach(function (otherDropdown) {
+					if (otherDropdown !== dropdown) {
+						otherDropdown.classList.remove('is-open');
+						var otherToggle = otherDropdown.querySelector('.dropdown-toggle');
+						if (otherToggle) {
+							otherToggle.setAttribute('aria-expanded', 'false');
+						}
+					}
+				});
+				toggle.setAttribute('aria-expanded', String(!expanded));
+				dropdown.classList.toggle('is-open');
+			});
+		});
+
+		document.addEventListener('click', function () {
+			dropdowns.forEach(function (dropdown) {
+				dropdown.classList.remove('is-open');
+				var toggle = dropdown.querySelector('.dropdown-toggle');
+				if (toggle) {
+					toggle.setAttribute('aria-expanded', 'false');
+				}
+			});
+		});
+
 		mainNav.querySelectorAll('a').forEach(function (link) {
 			link.addEventListener('click', function () {
 				mainNav.classList.remove('is-open');
 				menuToggle.setAttribute('aria-expanded', 'false');
+				dropdowns.forEach(function (dropdown) {
+					dropdown.classList.remove('is-open');
+					var toggle = dropdown.querySelector('.dropdown-toggle');
+					if (toggle) {
+						toggle.setAttribute('aria-expanded', 'false');
+					}
+				});
 			});
 		});
+	}
+
+	var statsBand = document.querySelector('.stats-band');
+	if (statsBand) {
+		var statNumbers = statsBand.querySelectorAll('.stat-number');
+		var hasAnimated = false;
+
+		function formatStat(value) {
+			return value.toLocaleString();
+		}
+
+		function animateValue(element) {
+			var target = parseInt(element.getAttribute('data-target'), 10);
+			var suffix = element.getAttribute('data-suffix') || '';
+			if (Number.isNaN(target)) {
+				return;
+			}
+
+			var duration = 1400;
+			var startTime;
+
+			function tick(timestamp) {
+				if (!startTime) {
+					startTime = timestamp;
+				}
+
+				var progress = Math.min((timestamp - startTime) / duration, 1);
+				var eased = 1 - Math.pow(1 - progress, 3);
+				var currentValue = Math.floor(target * eased);
+				element.textContent = formatStat(currentValue) + suffix;
+
+				if (progress < 1) {
+					window.requestAnimationFrame(tick);
+				}
+			}
+
+			window.requestAnimationFrame(tick);
+		}
+
+		function startStatsAnimation() {
+			if (hasAnimated) {
+				return;
+			}
+			hasAnimated = true;
+			statsBand.classList.add('is-visible');
+			statNumbers.forEach(function (item) {
+				animateValue(item);
+			});
+		}
+
+		if ('IntersectionObserver' in window) {
+			var observer = new IntersectionObserver(function (entries) {
+				entries.forEach(function (entry) {
+					if (entry.isIntersecting) {
+						startStatsAnimation();
+						observer.disconnect();
+					}
+				});
+			}, { threshold: 0.35 });
+
+			observer.observe(statsBand);
+		} else {
+			startStatsAnimation();
+		}
 	}
 
 	var slider = document.querySelector('.hero-slider');
@@ -23,11 +129,15 @@ document.addEventListener('DOMContentLoaded', function () {
 	}
 
 	var slides = Array.prototype.slice.call(slider.querySelectorAll('.slide'));
-	var prevBtn = slider.querySelector('.slider-btn.prev');
-	var nextBtn = slider.querySelector('.slider-btn.next');
 	var dotsWrap = slider.querySelector('.slider-dots');
+	var autoplayMs = parseInt(slider.getAttribute('data-autoplay-ms'), 10);
+	if (Number.isNaN(autoplayMs) || autoplayMs < 2500) {
+		autoplayMs = 5000;
+	}
 	var current = 0;
 	var timer;
+	var touchStartX = 0;
+	var touchEndX = 0;
 
 	function createDots() {
 		if (!dotsWrap) {
@@ -67,21 +177,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		clearInterval(timer);
 		timer = setInterval(function () {
 			showSlide(current + 1);
-		}, 6500);
-	}
-
-	if (prevBtn) {
-		prevBtn.addEventListener('click', function () {
-			showSlide(current - 1);
-			startAuto();
-		});
-	}
-
-	if (nextBtn) {
-		nextBtn.addEventListener('click', function () {
-			showSlide(current + 1);
-			startAuto();
-		});
+		}, autoplayMs);
 	}
 
 	slider.addEventListener('mouseenter', function () {
@@ -91,6 +187,24 @@ document.addEventListener('DOMContentLoaded', function () {
 	slider.addEventListener('mouseleave', function () {
 		startAuto();
 	});
+
+	slider.addEventListener('touchstart', function (event) {
+		touchStartX = event.changedTouches[0].clientX;
+	}, { passive: true });
+
+	slider.addEventListener('touchend', function (event) {
+		touchEndX = event.changedTouches[0].clientX;
+		if (Math.abs(touchEndX - touchStartX) < 40) {
+			return;
+		}
+
+		if (touchEndX < touchStartX) {
+			showSlide(current + 1);
+		} else {
+			showSlide(current - 1);
+		}
+		startAuto();
+	}, { passive: true });
 
 	createDots();
 	showSlide(0);

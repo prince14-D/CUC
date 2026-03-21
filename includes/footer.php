@@ -27,7 +27,7 @@
 		</div>
 
 		<div class="copyright">
-			<p>&copy; <?php echo date('Y'); ?> Christian University College. All rights reserved.</p>
+			<p>&copy; <?php echo date('Y'); ?> Christian University College. All rights reserved. Developed by <a href="https://tecliberia.com" target="_blank" rel="noopener noreferrer">Tec Liberia Group</a> - <a href="https://tecliberia.com" target="_blank" rel="noopener noreferrer">tecliberia.com</a></p>
 		</div>
 	</footer>
 

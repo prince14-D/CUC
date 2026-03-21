@@ -35,9 +35,44 @@ $pageDescription = isset($pageDescription)
 
         <nav id="main-nav" class="main-nav" aria-label="Main navigation">
             <a href="index.php">Home</a>
-            <a href="about.php">About</a>
-            <a href="academics.php">Academics</a>
+            <div class="nav-dropdown">
+                <button class="dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="about-submenu">
+                    About
+                </button>
+                <div id="about-submenu" class="dropdown-menu">
+                    <a href="about-overview.php">Overview</a>
+                    <a href="office-president.php">Office of the President</a>
+                    <a href="office-vice-president.php">Office of the Vice President</a>
+                    <a href="history.php">History</a>
+                </div>
+            </div>
+            <div class="nav-dropdown">
+                <button class="dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="academics-submenu">
+                    Academics
+                </button>
+                <div id="academics-submenu" class="dropdown-menu">
+                    <a href="academics.php">Academics Overview</a>
+                    <a href="dean-student-affairs.php">Dean of Student Affairs</a>
+                    <a href="colleges.php">Colleges</a>
+                    <a href="departments-a-z.php">Departments A-Z</a>
+                    <a href="academic-affairs.php">Academic Affairs</a>
+                    <a href="academic-calendar.php">Academic Calendar</a>
+                    <a href="academic-quality-assurance.php">Academic Quality Assurance</a>
+                    <a href="student-handbook.php">Student Handbook</a>
+                </div>
+            </div>
             <a href="admissions.php">Admissions</a>
+            <div class="nav-dropdown">
+                <button class="dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="pages-submenu">
+                    Pages
+                </button>
+                <div id="pages-submenu" class="dropdown-menu">
+
+                    <a href="accreditation.php">Accreditation</a>
+                    <a href="faculty-staff.php">Faculty &amp; Staff</a>
+                    <a href="alumni.php">Alumni</a>
+                </div>
+            </div>
             <a href="news.php">News</a>
             <a href="contact.php">Contact</a>
             <a href="https://portal.yourschool.com" class="portal-btn">Student Portal</a>
