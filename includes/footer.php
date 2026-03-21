@@ -1,0 +1,36 @@
+	</main>
+
+	<footer class="site-footer">
+		<div class="container footer-grid">
+			<section>
+				<h3>Christian University College</h3>
+				<p>
+					A Christ-centered institution preparing ethical professionals,
+					public servants, and innovators for Liberia and beyond.
+				</p>
+			</section>
+
+			<section>
+				<h4>Quick Links</h4>
+				<a href="about.php">About CUC</a>
+				<a href="academics.php">Programs</a>
+				<a href="admissions.php">Admissions</a>
+				<a href="news.php">News and Events</a>
+			</section>
+
+			<section>
+				<h4>Contact</h4>
+				<p>Paynesville City, Montserrado County, Liberia</p>
+				<p>+231 77 000 0000</p>
+				<p>admissions@cuc.edu.lr</p>
+			</section>
+		</div>
+
+		<div class="copyright">
+			<p>&copy; <?php echo date('Y'); ?> Christian University College. All rights reserved.</p>
+		</div>
+	</footer>
+
+	<script src="assets/js/script.js"></script>
+</body>
+</html>
