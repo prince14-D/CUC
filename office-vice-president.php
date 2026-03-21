@@ -60,6 +60,32 @@ include 'includes/header.php';
     </div>
 </section>
 
+<section class="section president-section">
+    <div class="container president-grid">
+        <div class="president-photo-wrap">
+            <img src="assets/images/President2.jpeg" alt="Portrait of the Vice President of Christian University College" class="president-photo">
+        </div>
+        <article class="president-message">
+            <span class="eyebrow">Vice President's Message</span>
+            <h2>Building Systems That Empower Student Success</h2>
+            <p>
+                At Christian University College, our commitment is to ensure that every student,
+                lecturer, and department is supported by efficient systems and responsive administration.
+                We believe excellence is achieved through coordination, discipline, and service.
+            </p>
+            <p>
+                The Office of the Vice President remains focused on strengthening operations,
+                improving institutional performance, and creating a campus environment where
+                academic and personal growth can thrive.
+            </p>
+            <p class="president-signature">
+                <strong>Dr. Miriam S. Johnson</strong><br>
+                Vice President, Christian University College
+            </p>
+        </article>
+    </div>
+</section>
+
 <section class="section">
     <div class="container">
         <div class="section-heading">
@@ -82,6 +108,33 @@ include 'includes/header.php';
             <article class="about-pillar-card">
                 <h3>Continuous Improvement</h3>
                 <p>Uses feedback and data insights to refine student and staff experience.</p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="section section-tinted">
+    <div class="container">
+        <div class="section-heading">
+            <span class="eyebrow">Core Values</span>
+            <h2>Values Guiding the Vice President's Office</h2>
+        </div>
+        <div class="feature-grid">
+            <article class="feature-card">
+                <h3>Accountability</h3>
+                <p>We commit to transparent systems, measurable outcomes, and responsible stewardship.</p>
+            </article>
+            <article class="feature-card">
+                <h3>Collaboration</h3>
+                <p>We work across units to ensure coordinated planning and effective execution.</p>
+            </article>
+            <article class="feature-card">
+                <h3>Service Excellence</h3>
+                <p>We prioritize timely, student-centered, and solution-focused administrative support.</p>
+            </article>
+            <article class="feature-card">
+                <h3>Continuous Improvement</h3>
+                <p>We use feedback and innovation to strengthen institutional quality and impact.</p>
             </article>
         </div>
     </div>

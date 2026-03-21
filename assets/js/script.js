@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	}
 
 	var revealTargets = document.querySelectorAll(
-		'.section-heading, .callout, .feature-card, .news-card, .program-item, .campus-item, .about-pillar-card, .about-stat-card, .event-list article, .partner-card, .download-card, .cta-inner'
+		'.reveal-on-scroll, .section-heading, .callout, .feature-card, .news-card, .program-item, .campus-item, .about-pillar-card, .about-stat-card, .event-list article, .partner-card, .download-card, .cta-inner'
 	);
 
 	if (revealTargets.length) {

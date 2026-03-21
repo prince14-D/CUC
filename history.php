@@ -64,6 +64,31 @@ include 'includes/header.php';
 </section>
 
 <section class="section section-tinted">
+    <div class="container split-layout">
+        <article class="callout">
+            <h2>Our Foundational Story</h2>
+            <p>
+                Christian University College began with a clear purpose: to provide high-quality,
+                values-based higher education that responds to Liberia's social and economic development priorities.
+            </p>
+            <p>
+                From its early years, CUC invested in academic quality, character formation, and practical learning
+                to prepare graduates for leadership and service.
+            </p>
+        </article>
+        <article class="callout">
+            <h2>Historical Significance</h2>
+            <ul class="clean-list">
+                <li>Expanded access to Christ-centered tertiary education</li>
+                <li>Introduced career-focused programs aligned with workforce needs</li>
+                <li>Strengthened student support and digital learning systems</li>
+                <li>Built regional and international collaborations for impact</li>
+            </ul>
+        </article>
+    </div>
+</section>
+
+<section class="section section-tinted">
     <div class="container">
         <div class="section-heading">
             <span class="eyebrow">Legacy in Motion</span>
@@ -85,6 +110,81 @@ include 'includes/header.php';
             <article class="about-pillar-card">
                 <h3>Regional and Global Outlook</h3>
                 <p>Partnerships and collaborations continue to widen CUC's impact and visibility.</p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="section-heading">
+            <span class="eyebrow">Historical Eras</span>
+            <h2>Key Phases of Institutional Development</h2>
+        </div>
+        <div class="about-timeline">
+            <article>
+                <h3>Foundation Era (2019-2020)</h3>
+                <p>Institutional setup, policy framework development, and foundational program launch.</p>
+            </article>
+            <article>
+                <h3>Expansion Era (2021-2023)</h3>
+                <p>Growth in academic offerings, student enrollment, and faculty capacity building.</p>
+            </article>
+            <article>
+                <h3>Transformation Era (2024-2025)</h3>
+                <p>Technology modernization, service improvement, and stronger quality assurance systems.</p>
+            </article>
+            <article>
+                <h3>Global Engagement Era (2026-Present)</h3>
+                <p>Partnerships, exchange opportunities, and broader institutional visibility.</p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="section section-tinted">
+    <div class="container">
+        <div class="section-heading">
+            <span class="eyebrow">Historical Gallery</span>
+            <h2>Moments That Shaped CUC</h2>
+        </div>
+        <div class="news-grid">
+            <article class="news-card">
+                <p class="meta">Founding Ceremony</p>
+                <h3>2019 Inaugural Gathering</h3>
+                <p>Leaders, educators, and community stakeholders launched CUC's founding vision.</p>
+            </article>
+            <article class="news-card">
+                <p class="meta">Academic Milestone</p>
+                <h3>First Major Program Expansion</h3>
+                <p>New departments and pathways broadened options for students across disciplines.</p>
+            </article>
+            <article class="news-card">
+                <p class="meta">Digital Transition</p>
+                <h3>Modern Learning Infrastructure</h3>
+                <p>Technology systems strengthened access, communication, and academic administration.</p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="section history-archive-section">
+    <div class="container">
+        <div class="section-heading">
+            <span class="eyebrow">Historical Archive</span>
+            <h2>Download Records and Institutional Highlights</h2>
+            <p>Access historical summaries, anniversary brochures, and key institutional documents.</p>
+        </div>
+        <div class="downloads-grid">
+            <article class="download-card">
+                <h3>CUC Historical Profile</h3>
+                <p>A concise institutional history from founding to current strategic direction.</p>
+                <a href="assets/docs/cuc-historical-profile.pdf" class="btn btn-primary" download>Download PDF</a>
+            </article>
+            <article class="download-card">
+                <h3>Anniversary Highlights</h3>
+                <p>Major milestones, achievements, and stories from the university's growth journey.</p>
+                <a href="assets/docs/cuc-anniversary-highlights.pdf" class="btn btn-primary" download>Download PDF</a>
             </article>
         </div>
     </div>

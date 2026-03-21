@@ -61,6 +61,58 @@ include 'includes/header.php';
     </div>
 </section>
 
+<section class="section president-section">
+    <div class="container president-grid">
+        <div class="president-photo-wrap">
+            <img src="assets/images/President1.jpeg" alt="Portrait of the President of Christian University College" class="president-photo">
+        </div>
+        <article class="president-message">
+            <span class="eyebrow">President's Message</span>
+            <h2>Leadership with Vision, Faith, and Service</h2>
+            <p>
+                At Christian University College, we are committed to cultivating graduates
+                who are academically equipped, morally grounded, and prepared to serve society.
+                Our focus is to build an institution where excellence and character grow together.
+            </p>
+            <p>
+                I invite students, parents, faculty, alumni, and partners to join us in advancing
+                a university community that values innovation, integrity, and transformative leadership.
+            </p>
+            <p class="president-signature">
+                <strong>Rev. Dr. Daniel K. Mensah</strong><br>
+                President, Christian University College
+            </p>
+        </article>
+    </div>
+</section>
+
+<section class="section section-tinted">
+    <div class="container">
+        <div class="section-heading">
+            <span class="eyebrow">Core Values</span>
+            <h2>Values That Guide the President's Office</h2>
+        </div>
+        <div class="feature-grid">
+            <article class="feature-card">
+                <h3>Integrity</h3>
+                <p>We uphold transparency, accountability, and ethical leadership in every decision.</p>
+            </article>
+            <article class="feature-card">
+                <h3>Excellence</h3>
+                <p>We pursue the highest standards in governance, academics, and service delivery.</p>
+            </article>
+            <article class="feature-card">
+                <h3>Innovation</h3>
+                <p>We encourage forward-thinking solutions that improve learning and institutional growth.</p>
+            </article>
+            <article class="feature-card">
+                <h3>Service</h3>
+                <p>We lead with compassion and commitment to community and national development.</p>
+            </article>
+        </div>
+    </div>
+</section>
+
 <section class="section section-tinted">
     <div class="container">
         <div class="section-heading">
