@@ -59,6 +59,38 @@ document.addEventListener('DOMContentLoaded', function () {
 		});
 	}
 
+	var revealTargets = document.querySelectorAll(
+		'.section-heading, .callout, .feature-card, .news-card, .program-item, .campus-item, .about-pillar-card, .about-stat-card, .event-list article, .partner-card, .download-card, .cta-inner'
+	);
+
+	if (revealTargets.length) {
+		revealTargets.forEach(function (item) {
+			item.classList.add('reveal-on-scroll');
+		});
+
+		if ('IntersectionObserver' in window) {
+			var revealObserver = new IntersectionObserver(function (entries, observer) {
+				entries.forEach(function (entry) {
+					if (entry.isIntersecting) {
+						entry.target.classList.add('is-revealed');
+						observer.unobserve(entry.target);
+					}
+				});
+			}, {
+				threshold: 0.18,
+				rootMargin: '0px 0px -40px 0px'
+			});
+
+			revealTargets.forEach(function (item) {
+				revealObserver.observe(item);
+			});
+		} else {
+			revealTargets.forEach(function (item) {
+				item.classList.add('is-revealed');
+			});
+		}
+	}
+
 	var statsBand = document.querySelector('.stats-band');
 	if (statsBand) {
 		var statNumbers = statsBand.querySelectorAll('.stat-number');

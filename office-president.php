@@ -4,7 +4,7 @@ $pageDescription = 'Leadership priorities and mandate of the Office of the Presi
 include 'includes/header.php';
 ?>
 
-<section class="page-hero">
+<section class="page-hero office-president-hero">
     <div class="container">
         <span class="eyebrow">Office of the President</span>
         <h1>Strategic Leadership for Academic and Institutional Growth</h1>
@@ -12,6 +12,27 @@ include 'includes/header.php';
             The Office of the President provides vision, direction, and governance to advance
             Christian University College's mission.
         </p>
+    </div>
+</section>
+
+<section class="section about-highlight-band">
+    <div class="container about-stats-grid">
+        <article class="about-stat-card">
+            <strong>4</strong>
+            <span>Strategic Priorities</span>
+        </article>
+        <article class="about-stat-card">
+            <strong>25</strong>
+            <span>Global Partnerships</span>
+        </article>
+        <article class="about-stat-card">
+            <strong>40+</strong>
+            <span>Academic Programs</span>
+        </article>
+        <article class="about-stat-card">
+            <strong>3,500+</strong>
+            <span>Students Served</span>
+        </article>
     </div>
 </section>
 
@@ -37,6 +58,44 @@ include 'includes/header.php';
                 accountability, and student-centered growth.
             </p>
         </article>
+    </div>
+</section>
+
+<section class="section section-tinted">
+    <div class="container">
+        <div class="section-heading">
+            <span class="eyebrow">Leadership Priorities</span>
+            <h2>Current Focus of the President's Office</h2>
+        </div>
+        <div class="about-pillars-grid">
+            <article class="about-pillar-card">
+                <h3>Institutional Growth</h3>
+                <p>Expand academic pathways and strengthen infrastructure for future-ready learning.</p>
+            </article>
+            <article class="about-pillar-card">
+                <h3>Academic Quality</h3>
+                <p>Promote robust teaching standards and measurable student learning outcomes.</p>
+            </article>
+            <article class="about-pillar-card">
+                <h3>Partnership Development</h3>
+                <p>Build local and international collaborations that broaden opportunities for students.</p>
+            </article>
+            <article class="about-pillar-card">
+                <h3>Values and Governance</h3>
+                <p>Strengthen accountability, integrity, and service-centered leadership culture.</p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="cta about-cta">
+    <div class="container cta-inner">
+        <h2>Partner with the President's Office</h2>
+        <p>Collaborate with CUC to support innovation, leadership development, and community transformation.</p>
+        <div class="btn-row">
+            <a href="contact.php" class="btn btn-primary">Contact Leadership Office</a>
+            <a href="about-overview.php" class="btn btn-light">Back to About Overview</a>
+        </div>
     </div>
 </section>
 
