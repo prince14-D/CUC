@@ -31,6 +31,16 @@
 		</div>
 	</footer>
 
+	<a
+		class="global-whatsapp-float"
+		href="https://wa.me/231770000000"
+		target="_blank"
+		rel="noopener noreferrer"
+		aria-label="Chat with CUC on WhatsApp">
+		<i class="wa-icon bi bi-whatsapp" aria-hidden="true"></i>
+		<span class="wa-text">Chat with us</span>
+	</a>
+
 	<script src="assets/js/script.js"></script>
 </body>
 </html>

@@ -7,9 +7,9 @@ include 'includes/header.php';
 
 <section class="page-hero">
     <div class="container">
-        <span class="eyebrow">Academic </span>
+		<span class="eyebrow">Academics</span>
         <h1>Rigorous Programs for Purposeful Careers</h1>
-        <p>TCUC offers diploma, associate, and bachelor-level pathways aligned with
+		<p>CUC offers diploma, associate, and bachelor-level pathways aligned with
 			national priorities and global standards. Develop expertise in your chosen field
 			with world-class faculty and industry-relevant curricula.</p>
     </div>
@@ -53,32 +53,64 @@ include 'includes/header.php';
 			<article class="news-card reveal-on-scroll">
 				<h3>Business and Management</h3>
 				<p>Accounting, Finance, Economics, Procurement, and Entrepreneurship. Build foundational business acumen and specialized expertise.</p>
-				<a href="academics.php" class="btn btn-ghost">Learn More</a>
+				<a href="departments-a-z.php" class="btn btn-ghost">Learn More</a>
 			</article>
 			<article class="news-card reveal-on-scroll">
 				<h3>Science and Technology</h3>
 				<p>Information Systems, Computer Applications, and Data Fundamentals. Master digital transformation and tech innovation.</p>
-				<a href="academics.php" class="btn btn-ghost">Learn More</a>
+				<a href="departments-a-z.php" class="btn btn-ghost">Learn More</a>
 			</article>
 			<article class="news-card reveal-on-scroll">
 				<h3>Education and Theology</h3>
 				<p>Primary and Secondary Education, Theology, and Ministry Leadership. Transform lives through teaching and spiritual guidance.</p>
-				<a href="academics.php" class="btn btn-ghost">Learn More</a>
+				<a href="departments-a-z.php" class="btn btn-ghost">Learn More</a>
 			</article>
 			<article class="news-card reveal-on-scroll">
 				<h3>Public Administration</h3>
 				<p>Policy, governance, social development, and project administration. Lead sustainable development initiatives.</p>
-				<a href="academics.php" class="btn btn-ghost">Learn More</a>
+				<a href="departments-a-z.php" class="btn btn-ghost">Learn More</a>
 			</article>
 			<article class="news-card reveal-on-scroll">
 				<h3>Health and Community Studies</h3>
 				<p>Public health awareness, community engagement, and social welfare practice. Advance wellbeing in your community.</p>
-				<a href="academics.php" class="btn btn-ghost">Learn More</a>
+				<a href="departments-a-z.php" class="btn btn-ghost">Learn More</a>
 			</article>
 			<article class="news-card reveal-on-scroll">
 				<h3>Professional Certifications</h3>
 				<p>Short-term certifications for upskilling and continuing education. Stay competitive in your career journey.</p>
-				<a href="academics.php" class="btn btn-ghost">Explore Programs</a>
+				<a href="departments-a-z.php" class="btn btn-ghost">Explore Programs</a>
+			</article>
+		</div>
+	</div>
+</section>
+
+<section class="section section-tinted">
+	<div class="container">
+		<div class="section-heading reveal-on-scroll">
+			<span class="eyebrow">Flexible Learning Model</span>
+			<h2>Study Pathways and Delivery Modes</h2>
+			<p>Choose learning options that match your schedule, background, and long-term goals.</p>
+		</div>
+		<div class="academic-delivery-grid">
+			<article class="academic-delivery-card reveal-on-scroll">
+				<span class="delivery-tag">Full-Time</span>
+				<h3>On-Campus Degree Study</h3>
+				<p>Structured weekday classes with direct faculty engagement, lab sessions, and peer collaboration.</p>
+			</article>
+			<article class="academic-delivery-card reveal-on-scroll">
+				<span class="delivery-tag">Part-Time</span>
+				<h3>Evening and Weekend Routes</h3>
+				<p>Designed for working professionals seeking to earn recognized qualifications while maintaining employment.</p>
+			</article>
+			<article class="academic-delivery-card reveal-on-scroll">
+				<span class="delivery-tag">Blended</span>
+				<h3>Hybrid Learning Experience</h3>
+				<p>Combine online coursework with in-person sessions for flexibility without losing practical engagement.</p>
+			</article>
+			<article class="academic-delivery-card reveal-on-scroll">
+				<span class="delivery-tag">Progression</span>
+				<h3>Certificate to Degree Ladder</h3>
+				<p>Start with a certificate or diploma and transition into higher academic levels through clear pathways.</p>
 			</article>
 		</div>
 	</div>
@@ -251,7 +283,7 @@ include 'includes/header.php';
 		<div class="reveal-on-scroll">
 			<h2>Ready to Start Your Academic Journey?</h2>
 			<p>Join CUC and discover a community committed to academic excellence and your personal growth.</p>
-			<div style="display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap; justify-content: center;">
+			<div class="academic-cta-actions">
 				<a href="contact.php" class="btn btn-primary btn-large">Apply Now →</a>
 				<a href="admissions.php" class="btn btn-secondary btn-large">Learn About Admissions →</a>
 			</div>

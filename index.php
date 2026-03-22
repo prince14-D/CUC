@@ -96,7 +96,7 @@ include 'includes/header.php';
                 We look forward to walking this journey with you.
             </p>
             <p class="president-signature">
-                <strong>Rev. Dr. Daniel K. Mensah</strong><br>
+                <strong>Dr. Henry T. B. Mulbah</strong><br>
                 President, Christian University College
             </p>
         </article>
@@ -197,10 +197,10 @@ include 'includes/header.php';
     </div>
 </section>
 
-<section class="section section-tinted">
+<section class="section section-tinted programs-section">
     <div class="container">
         <div class="split-layout">
-            <article>
+            <article class="programs-intro reveal-on-scroll">
                 <span class="eyebrow">Featured Schools</span>
                 <h2>Find the Program That Fits Your Future</h2>
                 <p>
@@ -211,18 +211,18 @@ include 'includes/header.php';
             </article>
 
             <div class="program-list">
-                <div class="program-item">
+                <article class="program-item reveal-on-scroll">
                     <h3>School of Business and Management</h3>
                     <p>Accounting, Banking and Finance, Marketing, and Entrepreneurship.</p>
-                </div>
-                <div class="program-item">
+                </article>
+                <article class="program-item reveal-on-scroll">
                     <h3>School of Education and Theology</h3>
                     <p>Teacher training, educational leadership, ministry, and biblical studies.</p>
-                </div>
-                <div class="program-item">
+                </article>
+                <article class="program-item reveal-on-scroll">
                     <h3>School of Science and Technology</h3>
                     <p>Information systems, software fundamentals, and applied computing.</p>
-                </div>
+                </article>
             </div>
         </div>
     </div>
@@ -273,6 +273,53 @@ include 'includes/header.php';
         <div class="partners-cta">
             <a href="contact.php" class="btn btn-primary">Become a Partner</a>
             <a href="about.php" class="btn btn-light">Learn About CUC</a>
+        </div>
+    </div>
+</section>
+
+<section class="section section-tinted testimonial-section">
+    <div class="container">
+        <div class="section-heading">
+            <span class="eyebrow">Student Testimony</span>
+            <h2>What Our Students Say About Life at CUC</h2>
+            <p>Real voices from students who are growing in faith, leadership, and professional preparation.</p>
+        </div>
+
+        <div class="testimonial-slider" aria-label="Student testimonies" data-autoplay-ms="6000">
+            <article class="testimonial-card is-active">
+                <div class="testimonial-person">
+                    <img class="testimonial-avatar" src="assets/images/slider1.jpeg" alt="Photo of Sarah K. Johnson">
+                    <div class="testimonial-meta">
+                        <strong>Sarah K. Johnson</strong>
+                        <span>Public Administration, Level 300</span>
+                    </div>
+                </div>
+                <p class="testimonial-quote">"CUC helped me become more confident as a student leader. I found mentors who challenged me academically and supported my personal growth."</p>
+            </article>
+
+            <article class="testimonial-card">
+                <div class="testimonial-person">
+                    <img class="testimonial-avatar" src="assets/images/slider2.jpeg" alt="Photo of Daniel T. Cooper">
+                    <div class="testimonial-meta">
+                        <strong>Daniel T. Cooper</strong>
+                        <span>Business Administration, Level 400</span>
+                    </div>
+                </div>
+                <p class="testimonial-quote">"The practical approach in our classes made learning relevant. I now feel prepared for internships and real career opportunities."</p>
+            </article>
+
+            <article class="testimonial-card">
+                <div class="testimonial-person">
+                    <img class="testimonial-avatar" src="assets/images/slider3.jpeg" alt="Photo of Mercy L. Brown">
+                    <div class="testimonial-meta">
+                        <strong>Mercy L. Brown</strong>
+                        <span>Education and Theology, Level 200</span>
+                    </div>
+                </div>
+                <p class="testimonial-quote">"Beyond academics, CUC gave me a strong community. Through clubs and chapel, I developed discipline, values, and purpose."</p>
+            </article>
+
+            <div class="testimonial-dots" role="tablist" aria-label="Select testimony"></div>
         </div>
     </div>
 </section>

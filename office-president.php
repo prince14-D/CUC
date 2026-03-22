@@ -4,7 +4,9 @@ $pageDescription = 'Leadership priorities and mandate of the Office of the Presi
 include 'includes/header.php';
 ?>
 
-<section class="page-hero office-president-hero">
+<section
+    class="page-hero office-president-hero"
+    style="background: linear-gradient(120deg, rgba(20, 27, 45, 0.88), rgba(140, 21, 21, 0.82)), url('assets/images/slider1.jpeg') center/cover no-repeat;">
     <div class="container">
         <span class="eyebrow">Office of the President</span>
         <h1>Strategic Leadership for Academic and Institutional Growth</h1>
