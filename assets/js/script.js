@@ -1,4 +1,9 @@
 document.addEventListener('DOMContentLoaded', function () {
+	document.documentElement.classList.add('js-animate');
+	window.requestAnimationFrame(function () {
+		document.body.classList.add('is-ready');
+	});
+
 	var menuToggle = document.querySelector('.menu-toggle');
 	var mainNav = document.querySelector('.main-nav');
 
@@ -64,8 +69,9 @@ document.addEventListener('DOMContentLoaded', function () {
 	);
 
 	if (revealTargets.length) {
-		revealTargets.forEach(function (item) {
+		revealTargets.forEach(function (item, index) {
 			item.classList.add('reveal-on-scroll');
+			item.style.setProperty('--reveal-delay', String(Math.min((index % 8) * 55, 385)) + 'ms');
 		});
 
 		if ('IntersectionObserver' in window) {

@@ -27,15 +27,16 @@
 		</div>
 
 		<div class="copyright">
-			<p>&copy; <?php echo date('Y'); ?> Christian University College. All rights reserved. Developed by <a href="https://tecliberia.com" target="_blank" rel="noopener noreferrer">Tec Liberia Group</a> 
+			<p>&copy; <?php echo date('Y'); ?> Christian University College. All rights reserved. Developed by <a href="https://tecliberia.com" target="_blank" rel="noopener noreferrer">Tec Liberia Group</a></p>
 		</div>
 	</footer>
 
 	<a
 		class="global-whatsapp-float"
-		href="https://wa.me/231770000000"
+		href="https://wa.me/231770000000?text=Hello%20CUC%2C%20I%20need%20assistance."
 		target="_blank"
 		rel="noopener noreferrer"
+		title="Chat with CUC on WhatsApp"
 		aria-label="Chat with CUC on WhatsApp">
 		<i class="wa-icon bi bi-whatsapp" aria-hidden="true"></i>
 		<span class="wa-text">Chat with us</span>

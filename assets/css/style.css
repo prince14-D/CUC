@@ -10,6 +10,9 @@
     --radius-lg: 20px;
     --radius-md: 12px;
     --space: clamp(16px, 2vw, 24px);
+    --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+    --motion-fast: 220ms;
+    --motion-medium: 560ms;
 }
 
 * {
@@ -22,6 +25,10 @@ body {
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Source Sans 3', sans-serif;
     color: var(--color-ink);
@@ -32,21 +39,51 @@ body {
     line-height: 1.6;
 }
 
-.reveal-on-scroll {
+.js-animate body {
     opacity: 0;
-    transform: translateY(26px);
-    transition: opacity 0.65s ease, transform 0.65s ease;
+    transform: translateY(8px);
+    transition: opacity var(--motion-medium) var(--ease-smooth), transform var(--motion-medium) var(--ease-smooth);
 }
 
-.reveal-on-scroll.is-revealed {
+.js-animate body.is-ready {
     opacity: 1;
     transform: translateY(0);
 }
 
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(26px) scale(0.985);
+    filter: blur(1px);
+    transition:
+        opacity var(--motion-medium) var(--ease-smooth),
+        transform var(--motion-medium) var(--ease-smooth),
+        filter var(--motion-medium) var(--ease-smooth);
+    transition-delay: var(--reveal-delay, 0ms);
+    will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-revealed {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+}
+
 @media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .js-animate body,
+    .js-animate body.is-ready {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
     .reveal-on-scroll {
         opacity: 1;
         transform: none;
+        filter: none;
         transition: none;
     }
 }
@@ -1086,9 +1123,7 @@ h3 {
         grid-template-columns: 1fr 1fr;
         gap: 1.25rem;
     }
-}
 
-.page-hero {
     .academic-downloads-section .section-heading {
         text-align: left;
         max-width: none;
@@ -1109,12 +1144,55 @@ h3 {
     .academic-download-item p {
         max-width: none;
     }
+}
 
+.page-hero {
     background:
         linear-gradient(120deg, rgba(20, 27, 45, 0.95), rgba(140, 21, 21, 0.92)),
         linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent);
     color: #fff;
     padding: clamp(70px, 14vh, 130px) 0 clamp(40px, 8vh, 74px);
+}
+
+@media (hover: none) {
+    .feature-card:hover,
+    .news-card:hover,
+    .callout:hover,
+    .department-photo-card:hover,
+    .honor-graduate-card:hover,
+    .event-list article:hover,
+    .program-item:hover,
+    .btn:hover,
+    .link-arrow:hover {
+        transform: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: min(1120px, 94%);
+    }
+
+    .page-hero {
+        padding: 34px 0 22px;
+    }
+
+    h1 {
+        font-size: clamp(1.75rem, 8vw, 2.15rem);
+    }
+
+    h2 {
+        font-size: clamp(1.35rem, 6.4vw, 1.7rem);
+    }
+
+    .btn-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn-row .btn {
+        width: 100%;
+    }
 }
 
 .page-hero p {
@@ -2808,5 +2886,4 @@ h3 {
         padding: 9px 12px;
         font-size: 0.8rem;
     }
-}
 }
