@@ -86,15 +86,22 @@ include 'includes/header.php';
             <span class="eyebrow">President's Message</span>
             <h2>Welcome to Christian University College</h2>
             <p>
-                Christian University College is committed to raising a generation of graduates
-                who combine academic excellence with integrity, compassion, and service.
-                Our mission is not only to educate minds, but also to shape character and purpose.
+                <h4>Dear Incoming Students,</h4> <br>
+
+It is with great joy that I welcome you to our Christian University College. You are beginning an important journey that will shape your academic, professional, and spiritual life.
             </p>
             <p>
-                As President, I invite you to become part of a university community where faith,
-                leadership, and innovation work together to transform lives and communities.
-                We look forward to walking this journey with you.
+            Our institution is more than a place of learning—it is a Christ-centered community committed to excellence, character development, and service. Here, you will grow not only in knowledge but also in faith, integrity, and leadership.
             </p>
+            <p>
+                I encourage you to embrace every opportunity—engage in your studies, participate in campus life, build meaningful relationships, and allow your faith to guide your path. Our faculty and staff are here to support and guide you every step of the way.
+            </p>
+
+            <p>
+                Remember, you are here for a purpose. Let your education inspire you to serve others, make a positive impact, and honor God in all you do.
+            </p>
+
+            <p>Welcome to your new home. We are excited to walk this journey with you.</p>
             <p class="president-signature">
                 <strong>Dr. Henry T. B. Mulbah</strong><br>
                 President, Christian University College
@@ -204,8 +211,7 @@ include 'includes/header.php';
                 <span class="eyebrow">Featured Schools</span>
                 <h2>Find the Program That Fits Your Future</h2>
                 <p>
-                    Our faculties offer stackable pathways from certificate to bachelor's degree,
-                    helping students advance academically and professionally.
+                    We offer <strong>Diploma, Associate, and Bachelor</strong> programs. Our faculties provide stackable pathways to help you advance academically and professionally.
                 </p>
                 <a href="academics.php" class="btn btn-primary">View All Programs</a>
             </article>
@@ -213,15 +219,24 @@ include 'includes/header.php';
             <div class="program-list">
                 <article class="program-item reveal-on-scroll">
                     <h3>School of Business and Management</h3>
-                    <p>Accounting, Banking and Finance, Marketing, and Entrepreneurship.</p>
+                    <p>
+                        <strong>Diploma, Associate & Bachelor programs:</strong>
+                        Accounting, Banking and Finance, Marketing, and Entrepreneurship.
+                    </p>
                 </article>
                 <article class="program-item reveal-on-scroll">
                     <h3>School of Education and Theology</h3>
-                    <p>Teacher training, educational leadership, ministry, and biblical studies.</p>
+                    <p>
+                        <strong>Diploma, Associate & Bachelor programs:</strong>
+                        Teacher training, educational leadership, ministry, and biblical studies.
+                    </p>
                 </article>
                 <article class="program-item reveal-on-scroll">
                     <h3>School of Science and Technology</h3>
-                    <p>Information systems, software fundamentals, and applied computing.</p>
+                    <p>
+                        <strong>Diploma, Associate & Bachelor programs:</strong>
+                        Information systems, software fundamentals, and applied computing.
+                    </p>
                 </article>
             </div>
         </div>
@@ -232,46 +247,70 @@ include 'includes/header.php';
     <div class="container">
         <div class="section-heading">
             <span class="eyebrow">Global Partners</span>
-            <h2>Collaborating with Institutions Around the World</h2>
+            <h2>University Partners, International Affiliations, and Accreditation</h2>
             <p>
-                CUC works with international universities, research centers, and professional bodies
-                to expand learning opportunities, joint projects, and global exposure for students.
+                CUC maintains strategic collaborations and recognition relationships with institutions
+                and accreditation bodies across the world.
             </p>
         </div>
 
         <div class="partners-grid">
             <article class="partner-card">
                 <div class="partner-brand">
-                    <img src="assets/images/logo.jpg" alt="Westbridge University logo" class="partner-logo">
-                    <h3>Westbridge University, UK</h3>
+                    <img src="assets/images/logo.jpg" alt="University partners" class="partner-logo">
+                    <div>
+                        <span class="partner-kicker">Academic Collaboration</span>
+                        <h3>University Partners</h3>
+                    </div>
                 </div>
-                <p>Faculty exchange and curriculum development in business and public policy.</p>
+                <ul class="partner-list" aria-label="University Partners">
+                    <li>Iowa University (USA)</li>
+                    <li>Fort Hays State University (USA)</li>
+                    <li>University of Albany (USA)</li>
+                </ul>
             </article>
+
             <article class="partner-card">
                 <div class="partner-brand">
-                    <img src="assets/images/logo.jpg" alt="Nordic Institute of Technology logo" class="partner-logo">
-                    <h3>Nordic Institute of Technology, Sweden</h3>
+                    <img src="assets/images/logo.jpg" alt="International affiliations" class="partner-logo">
+                    <div>
+                        <span class="partner-kicker">Global Network</span>
+                        <h3>International Affiliations</h3>
+                    </div>
                 </div>
-                <p>Joint digital innovation projects and practical technology bootcamps.</p>
+                <ul class="partner-list" aria-label="International Affiliations">
+                    <li>India University</li>
+                    <li>Korea University (affiliation)</li>
+                    <li>UCIS University</li>
+                    <li>Kanda University (Japan)</li>
+                    <li>Pentecostal University of West Africa (Ghana)</li>
+                    <li>Great Commission Bible College (Liberia &amp; USA)</li>
+                </ul>
             </article>
+
             <article class="partner-card">
                 <div class="partner-brand">
-                    <img src="assets/images/logo.jpg" alt="Faith and Leadership Consortium logo" class="partner-logo">
-                    <h3>Faith and Leadership Consortium, USA</h3>
+                    <img src="assets/images/logo.jpg" alt="Accreditation and recognition bodies" class="partner-logo">
+                    <div>
+                        <span class="partner-kicker">Quality Assurance</span>
+                        <h3>Accreditation and Recognition Bodies</h3>
+                    </div>
                 </div>
-                <p>Leadership fellowships and ethics-focused student mentorship initiatives.</p>
-            </article>
-            <article class="partner-card">
-                <div class="partner-brand">
-                    <img src="assets/images/logo.jpg" alt="Pan-African Higher Education Network logo" class="partner-logo">
-                    <h3>Pan-African Higher Education Network</h3>
-                </div>
-                <p>Regional research collaboration, conferences, and student mobility programs.</p>
+                <p class="partner-note">CUC is recognized by the following international accreditation organizations:</p>
+                <ul class="partner-list" aria-label="Accreditation and Recognition Bodies">
+                    <li>IAO - International Accreditation Organization (USA)</li>
+                    <li>EDU - Educational Commission Accreditation Standards (USA)</li>
+                    <li>EAECHE - European Accreditation Equivalency Council for Higher Education (Europe)</li>
+                    <li>ACEN - Accreditation Commission for Education in Nursing (USA)</li>
+                    <li>NABH - National Accreditation Board for Hospitals &amp; Healthcare Providers (India)</li>
+                    <li>QAHE - Quality Assurance in Higher Education (USA)</li>
+                    <li>HLACT - International UAS</li>
+                </ul>
             </article>
         </div>
 
         <div class="partners-cta">
-            <a href="contact.php" class="btn btn-primary">Become a Partner</a>
+            <a href="contact.php" class="btn btn-primary">Partner With CUC</a>
             <a href="about.php" class="btn btn-light">Learn About CUC</a>
         </div>
     </div>

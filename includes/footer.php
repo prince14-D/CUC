@@ -16,6 +16,7 @@
 				<a href="academics.php">Programs</a>
 				<a href="admissions.php">Admissions</a>
 				<a href="news.php">News and Events</a>
+				<a href="admission-interest-admin.php">Admin</a>
 			</section>
 
 			<section>

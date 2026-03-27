@@ -25,8 +25,8 @@ include 'includes/header.php';
             <span>Faculty and Staff</span>
         </article>
         <article class="about-stat-card">
-            <strong>3</strong>
-            <span>Core Colleges</span>
+            <strong>6</strong>
+            <span>Academic Colleges</span>
         </article>
         <article class="about-stat-card">
             <strong>100%</strong>

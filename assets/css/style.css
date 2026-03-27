@@ -778,40 +778,97 @@ h3 {
 
 .partners-grid {
     display: grid;
-    gap: 16px;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .partner-card {
-    background: #fff;
-    border: 1px solid var(--color-border);
+    background: linear-gradient(160deg, #ffffff 0%, #fbfaf8 100%);
+    border: 1px solid rgba(20, 27, 45, 0.1);
+    border-top: 4px solid rgba(140, 21, 21, 0.85);
     border-radius: var(--radius-md);
-    padding: 22px;
+    padding: 22px 22px 20px;
     box-shadow: var(--shadow-soft);
+    transition: transform 240ms var(--ease-smooth), box-shadow 240ms var(--ease-smooth), border-color 240ms var(--ease-smooth);
+}
+
+.partner-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(140, 21, 21, 0.3);
+    box-shadow: 0 18px 32px rgba(20, 27, 45, 0.12);
 }
 
 .partner-card h3 {
-    margin-bottom: 8px;
+    margin: 2px 0 0;
+    font-size: 1.1rem;
 }
 
 .partner-brand {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 12px;
-    margin-bottom: 8px;
+    margin-bottom: 14px;
 }
 
 .partner-logo {
-    width: 56px;
-    height: 56px;
+    width: 52px;
+    height: 52px;
     object-fit: cover;
     border-radius: 10px;
     border: 1px solid var(--color-border);
     background: #fff;
+    flex-shrink: 0;
 }
 
 .partner-brand h3 {
     margin: 0;
+}
+
+.partner-kicker {
+    display: inline-block;
+    font-size: 0.73rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-cardinal);
+    background: rgba(140, 21, 21, 0.1);
+    border: 1px solid rgba(140, 21, 21, 0.2);
+    border-radius: 999px;
+    padding: 3px 9px;
+}
+
+.partner-note {
+    margin: 0 0 10px;
+    color: var(--color-ink-soft);
+    font-size: 0.92rem;
+}
+
+.partner-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 10px;
+}
+
+.partner-list li {
+    position: relative;
+    margin: 0;
+    padding: 0 0 0 18px;
+    color: var(--color-ink-soft);
+    line-height: 1.45;
+}
+
+.partner-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--color-cardinal), var(--color-cardinal-dark));
+    box-shadow: 0 0 0 3px rgba(140, 21, 21, 0.12);
 }
 
 .partners-cta {
@@ -870,6 +927,50 @@ h3 {
     color: rgba(20, 27, 45, 0.75);
     font-size: 0.85rem;
     margin: 0.4rem 0 0.3rem !important;
+}
+
+.dean-profile-grid {
+    gap: 1.5rem;
+}
+
+.dean-profile-card {
+    border-top: 4px solid rgba(140, 21, 21, 0.85);
+    padding: 1.1rem;
+}
+
+.dean-profile-image {
+    aspect-ratio: 5 / 4;
+    margin-bottom: 0.8rem;
+}
+
+.dean-role-badge {
+    display: inline-block;
+    margin: 0 0 0.5rem;
+    padding: 0.22rem 0.62rem;
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-cardinal-dark);
+    background: rgba(140, 21, 21, 0.1);
+    border: 1px solid rgba(140, 21, 21, 0.22);
+    border-radius: 999px;
+}
+
+.dean-email-link {
+    display: inline-block;
+    margin-top: 0.55rem;
+    color: var(--color-cardinal);
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom: 1px dashed rgba(140, 21, 21, 0.45);
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.dean-email-link:hover,
+.dean-email-link:focus-visible {
+    color: var(--color-cardinal-dark);
+    border-color: var(--color-cardinal-dark);
 }
 
 .faculty-department {
@@ -2505,9 +2606,17 @@ h3 {
         padding: 1rem;
     }
 
-    .partner-card img {
-        max-height: 80px;
-        width: auto;
+    .partner-logo {
+        width: 46px;
+        height: 46px;
+    }
+
+    .partner-list {
+        gap: 8px;
+    }
+
+    .partner-list li {
+        font-size: 0.92rem;
     }
 
     .partner-card .btn-ghost {

@@ -44,6 +44,12 @@ include 'includes/header.php';
 		</div>
 		<div class="news-grid">
 			<article class="news-card reveal-on-scroll">
+				<p class="meta">March 27, 2026</p>
+				<h3>CUC Job Vacancy Board Is Now Live</h3>
+				<p>Looking to join Christian University College? Explore current openings across academic and administrative roles.</p>
+				<a href="job-vacancy.php" class="link-arrow">View Job Vacancies →</a>
+			</article>
+			<article class="news-card reveal-on-scroll">
 				<p class="meta">March 18, 2026</p>
 				<h3>Admissions Office Announces Merit Scholarship Window</h3>
 				<p>Eligible first-year students may apply for tuition support during the 2026 intake cycle. Details available at admissions office.</p>

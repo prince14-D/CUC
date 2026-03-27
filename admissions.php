@@ -24,7 +24,7 @@ include 'includes/header.php';
             <span>Programs and Certificates</span>
         </article>
         <article class="about-stat-card">
-            <strong>3</strong>
+            <strong>6</strong>
             <span>Academic Colleges</span>
         </article>
         <article class="about-stat-card">
@@ -54,7 +54,10 @@ include 'includes/header.php';
             <p><strong>Early Review:</strong> January to March</p>
             <p><strong>Main Intake:</strong> April to August</p>
             <p><strong>Late Admissions:</strong> Subject to available spaces</p>
-            <a href="https://portal.yourschool.com" class="btn btn-primary">Start Online Application</a>
+            <div class="btn-row">
+                <a href="https://portal.yourschool.com" class="btn btn-primary">Start Online Application</a>
+                <a href="admission-interest.php" class="btn btn-light">Register Interest</a>
+            </div>
         </article>
     </div>
 </section>
@@ -143,6 +146,7 @@ include 'includes/header.php';
         <p>Start your admission process today and take the next step toward your academic future.</p>
         <div class="btn-row">
             <a href="https://portal.yourschool.com" class="btn btn-primary">Apply Online</a>
+            <a href="admission-interest.php" class="btn btn-light">Admission Interest Form</a>
             <a href="contact.php" class="btn btn-light">Talk to Admissions</a>
         </div>
     </div>

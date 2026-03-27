@@ -17,7 +17,7 @@ include 'includes/header.php';
 <section class="section about-highlight-band">
     <div class="container about-stats-grid">
         <article class="about-stat-card">
-            <strong>3</strong>
+            <strong>6</strong>
             <span>Academic Colleges</span>
         </article>
         <article class="about-stat-card">
@@ -44,30 +44,57 @@ include 'includes/header.php';
         </div>
         <div class="news-grid">
             <article class="news-card reveal-on-scroll">
-                <h3>College of Business and Management</h3>
-                <p>Accounting, Finance, Marketing, and entrepreneurship-driven programs that prepare graduates for the private and public sectors.</p>
+                <h3>College of Business and Public Administration</h3>
+                <p>Programs that prepare ethical professionals for business leadership, public service, and organizational development.</p>
                 <ul class="clean-list">
-                    <li>Accounting and Finance</li>
-                    <li>Marketing and Entrepreneurship</li>
-                    <li>Business Leadership and Management</li>
+                    <li>Business Administration</li>
+                    <li>Public Administration</li>
+                    <li>Leadership and Management</li>
                 </ul>
             </article>
             <article class="news-card reveal-on-scroll">
-                <h3>College of Education and Theology</h3>
-                <p>Teacher education, ministry studies, and values-based leadership formation for impact in schools, churches, and communities.</p>
+                <h3>College of Education</h3>
+                <p>Teacher preparation and educational leadership training for impactful service in schools and learning communities.</p>
                 <ul class="clean-list">
                     <li>Teacher Education</li>
                     <li>Educational Leadership</li>
-                    <li>Theology and Ministry Studies</li>
+                    <li>Curriculum and Instruction</li>
                 </ul>
             </article>
             <article class="news-card reveal-on-scroll">
-                <h3>College of Science and Technology</h3>
-                <p>Applied computing, digital systems, and innovation-oriented technical education designed for modern career pathways.</p>
+                <h3>College of Health Sciences</h3>
+                <p>Health-focused programs that combine academic excellence, practical training, and compassionate care.</p>
                 <ul class="clean-list">
-                    <li>Information Systems and Computing</li>
-                    <li>Digital Innovation and Technology</li>
-                    <li>Practical Lab-Based Learning</li>
+                    <li>Public Health Foundations</li>
+                    <li>Clinical and Community Practice</li>
+                    <li>Health Policy and Promotion</li>
+                </ul>
+            </article>
+            <article class="news-card reveal-on-scroll">
+                <h3>College of Social Sciences and Human Studies</h3>
+                <p>Interdisciplinary programs that address social development, human behavior, and community transformation.</p>
+                <ul class="clean-list">
+                    <li>Social Sciences</li>
+                    <li>Human Studies</li>
+                    <li>Community Development</li>
+                </ul>
+            </article>
+            <article class="news-card reveal-on-scroll">
+                <h3>College of Biblical Studies (Theology)</h3>
+                <p>Biblical and theological education designed to form grounded leaders for ministry and service.</p>
+                <ul class="clean-list">
+                    <li>Biblical Studies</li>
+                    <li>Theology</li>
+                    <li>Ministry Formation</li>
+                </ul>
+            </article>
+            <article class="news-card reveal-on-scroll">
+                <h3>College of Sciences &amp; Technology</h3>
+                <p>Scientific and technology-centered learning pathways for innovation, research, and practical problem solving.</p>
+                <ul class="clean-list">
+                    <li>Natural Sciences</li>
+                    <li>Computing and Technology</li>
+                    <li>Applied Research</li>
                 </ul>
             </article>
         </div>

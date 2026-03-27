@@ -76,7 +76,15 @@ $pageDescription = isset($pageDescription)
                     <a href="alumni.php">Alumni</a>
                 </div>
             </div>
-            <a href="news.php">News</a>
+            <div class="nav-dropdown">
+                <button class="dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="news-submenu">
+                    News
+                </button>
+                <div id="news-submenu" class="dropdown-menu">
+                    <a href="news.php">News</a>
+                    <a href="job-vacancy.php">Job Vacancy</a>
+                </div>
+            </div>
             <a href="contact.php">Contact</a>
             <a href="https://portal.yourschool.com" class="portal-btn">Student Portal</a>
         </nav>
