@@ -16,25 +16,30 @@ include 'includes/header.php';
     }
 
     .home-page .slide-content {
-        min-height: 500px;
+        min-height: 320px;
         max-width: 100%;
-        padding: 52px 0 74px;
+        padding: 32px 0 48px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
     .home-page .slide-content h1,
     .home-page .slide-content h2 {
         font-size: clamp(1.45rem, 5.4vw, 1.95rem);
         line-height: 1.28;
+        margin: 8px 0;
     }
 
     .home-page .slide-content p {
         max-width: 100%;
         font-size: 0.96rem;
         line-height: 1.6;
+        margin: 10px 0;
     }
 
     .home-page .hero-slider {
-        min-height: auto;
+        min-height: 360px;
     }
 
     .home-page .btn-row {
@@ -178,8 +183,8 @@ include 'includes/header.php';
     }
 
     .home-page .slide-content {
-        min-height: 460px;
-        padding: 44px 0 68px;
+        min-height: 280px;
+        padding: 28px 0 44px;
     }
 
     .home-page .campus-life-media img {
@@ -202,6 +207,16 @@ include 'includes/header.php';
 
     .home-page .testimonial-card {
         min-height: auto;
+    }
+
+    .home-page .slider-dots {
+        bottom: 18px;
+        gap: 6px;
+    }
+
+    .home-page .slider-dots button {
+        width: 9px;
+        height: 9px;
     }
 }
 </style>
