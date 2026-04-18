@@ -1,8 +1,84 @@
 <?php
 $pageTitle = 'Colleges';
 $pageDescription = 'Explore the colleges within Christian University College.';
+$bodyClass = 'colleges-page';
 include 'includes/header.php';
 ?>
+
+<style>
+@media (max-width: 720px) {
+    .colleges-page .page-hero {
+        padding: 40px 0 20px;
+    }
+
+    .colleges-page .section {
+        padding: 1.5rem 0;
+    }
+
+    .colleges-page .section-heading {
+        margin-bottom: 1rem;
+        text-align: left;
+    }
+
+    .colleges-page .section-heading h2 {
+        font-size: clamp(1.3rem, 4vw, 1.6rem);
+        margin-bottom: 8px;
+    }
+
+    .colleges-page .section-heading p {
+        font-size: 0.9rem;
+    }
+
+    .colleges-page .about-stats-grid,
+    .colleges-page .news-grid,
+    .colleges-page .split-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .colleges-page .about-stat-card,
+    .colleges-page .news-card,
+    .colleges-page .callout {
+        padding: 1rem;
+    }
+
+    .colleges-page .btn-row {
+        flex-direction: column;
+        gap: 0.6rem;
+    }
+
+    .colleges-page .btn-row .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .colleges-page .page-hero {
+        padding: 34px 0 18px;
+    }
+
+    .colleges-page h1 {
+        font-size: clamp(1.75rem, 8vw, 2.15rem);
+    }
+
+    .colleges-page h2 {
+        font-size: clamp(1.35rem, 6vw, 1.7rem);
+    }
+
+    .colleges-page p,
+    .colleges-page li {
+        font-size: 0.92rem;
+    }
+
+    .colleges-page .about-stat-card strong {
+        font-size: clamp(1.3rem, 7vw, 1.8rem);
+    }
+
+    .colleges-page .news-card h3,
+    .colleges-page .callout h2 {
+        font-size: 1rem;
+    }
+}
+</style>
 
 <section
     class="page-hero"

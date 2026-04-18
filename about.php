@@ -1,8 +1,81 @@
 <?php
 $pageTitle = 'About';
 $pageDescription = 'Learn about Christian University College, our mission, values, leadership, and campus life.';
+$bodyClass = 'about-page';
 include 'includes/header.php';
 ?>
+
+<style>
+@media (max-width: 720px) {
+	.about-page .page-hero {
+		padding: 40px 0 20px;
+	}
+
+	.about-page .section {
+		padding: 1.5rem 0;
+	}
+
+	.about-page .section-heading {
+		margin-bottom: 1rem;
+		text-align: left;
+	}
+
+	.about-page .section-heading h2 {
+		font-size: clamp(1.3rem, 4vw, 1.6rem);
+		margin-bottom: 8px;
+	}
+
+	.about-page .section-heading p {
+		font-size: 0.9rem;
+	}
+
+	.about-page .split-layout,
+	.about-page .feature-grid,
+	.about-page .news-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.about-page .feature-card,
+	.about-page .news-card,
+	.about-page .callout {
+		padding: 1rem;
+	}
+
+	.about-page .btn-row {
+		flex-direction: column;
+		gap: 0.6rem;
+	}
+
+	.about-page .btn-row .btn {
+		width: 100%;
+	}
+}
+
+@media (max-width: 480px) {
+	.about-page .page-hero {
+		padding: 34px 0 18px;
+	}
+
+	.about-page h1 {
+		font-size: clamp(1.75rem, 8vw, 2.15rem);
+	}
+
+	.about-page h2 {
+		font-size: clamp(1.35rem, 6vw, 1.7rem);
+	}
+
+	.about-page p,
+	.about-page li {
+		font-size: 0.92rem;
+	}
+
+	.about-page .feature-card h3,
+	.about-page .news-card h3,
+	.about-page .callout h3 {
+		font-size: 1rem;
+	}
+}
+</style>
 
 <section class="page-hero">
 	<div class="container">

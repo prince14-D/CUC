@@ -1,8 +1,90 @@
 <?php
 $pageTitle = 'Academic Quality Assurance';
 $pageDescription = 'Quality assurance processes at Christian University College.';
+$bodyClass = 'academic-quality-assurance-page';
 include 'includes/header.php';
 ?>
+
+<style>
+@media (max-width: 720px) {
+    .academic-quality-assurance-page .page-hero {
+        padding: 40px 0 20px;
+    }
+
+    .academic-quality-assurance-page .section {
+        padding: 1.5rem 0;
+    }
+
+    .academic-quality-assurance-page .section-heading {
+        margin-bottom: 1rem;
+        text-align: left;
+    }
+
+    .academic-quality-assurance-page .section-heading h2 {
+        font-size: clamp(1.3rem, 4vw, 1.6rem);
+        margin-bottom: 8px;
+    }
+
+    .academic-quality-assurance-page .section-heading p {
+        font-size: 0.9rem;
+    }
+
+    .academic-quality-assurance-page .about-stats-grid,
+    .academic-quality-assurance-page .news-grid,
+    .academic-quality-assurance-page .feature-grid,
+    .academic-quality-assurance-page .split-layout,
+    .academic-quality-assurance-page .about-pillars-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .academic-quality-assurance-page .about-stat-card,
+    .academic-quality-assurance-page .news-card,
+    .academic-quality-assurance-page .feature-card,
+    .academic-quality-assurance-page .about-pillar-card,
+    .academic-quality-assurance-page .callout {
+        padding: 1rem;
+    }
+
+    .academic-quality-assurance-page .btn-row {
+        flex-direction: column;
+        gap: 0.6rem;
+    }
+
+    .academic-quality-assurance-page .btn-row .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .academic-quality-assurance-page .page-hero {
+        padding: 34px 0 18px;
+    }
+
+    .academic-quality-assurance-page h1 {
+        font-size: clamp(1.75rem, 8vw, 2.15rem);
+    }
+
+    .academic-quality-assurance-page h2 {
+        font-size: clamp(1.35rem, 6vw, 1.7rem);
+    }
+
+    .academic-quality-assurance-page p,
+    .academic-quality-assurance-page li {
+        font-size: 0.92rem;
+    }
+
+    .academic-quality-assurance-page .about-stat-card strong {
+        font-size: clamp(1.3rem, 7vw, 1.8rem);
+    }
+
+    .academic-quality-assurance-page .feature-card h3,
+    .academic-quality-assurance-page .about-pillar-card h3,
+    .academic-quality-assurance-page .news-card h3,
+    .academic-quality-assurance-page .callout h2 {
+        font-size: 1rem;
+    }
+}
+</style>
 
 <section
     class="page-hero"
@@ -153,7 +235,7 @@ include 'includes/header.php';
             <h2>Need Clarification?</h2>
             <p>For policy interpretation, audit schedules, and departmental support requests, contact Academic Affairs.</p>
             <p><strong>Email:</strong> academicaffairs@cuc.edu.lr</p>
-            <p><strong>Phone:</strong> +231 77 000 0000</p>
+            <p><strong>Phone:</strong> +231 88 1846 653</p>
         </article>
     </div>
 </section>

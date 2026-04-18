@@ -1,8 +1,88 @@
 <?php
 $pageTitle = 'Departments A-Z';
 $pageDescription = 'Alphabetical list of academic departments at Christian University College.';
+$bodyClass = 'departments-a-z-page';
 include 'includes/header.php';
 ?>
+
+<style>
+@media (max-width: 720px) {
+    .departments-a-z-page .page-hero {
+        padding: 40px 0 20px;
+    }
+
+    .departments-a-z-page .section {
+        padding: 1.5rem 0;
+    }
+
+    .departments-a-z-page .section-heading {
+        margin-bottom: 1rem;
+        text-align: left;
+    }
+
+    .departments-a-z-page .section-heading h2 {
+        font-size: clamp(1.3rem, 4vw, 1.6rem);
+        margin-bottom: 8px;
+    }
+
+    .departments-a-z-page .section-heading p {
+        font-size: 0.9rem;
+    }
+
+    .departments-a-z-page .about-stats-grid,
+    .departments-a-z-page .news-grid,
+    .departments-a-z-page .feature-grid,
+    .departments-a-z-page .split-layout,
+    .departments-a-z-page .department-photo-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .departments-a-z-page .about-stat-card,
+    .departments-a-z-page .news-card,
+    .departments-a-z-page .feature-card,
+    .departments-a-z-page .callout {
+        padding: 1rem;
+    }
+
+    .departments-a-z-page .btn-row {
+        flex-direction: column;
+        gap: 0.6rem;
+    }
+
+    .departments-a-z-page .btn-row .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .departments-a-z-page .page-hero {
+        padding: 34px 0 18px;
+    }
+
+    .departments-a-z-page h1 {
+        font-size: clamp(1.75rem, 8vw, 2.15rem);
+    }
+
+    .departments-a-z-page h2 {
+        font-size: clamp(1.35rem, 6vw, 1.7rem);
+    }
+
+    .departments-a-z-page p,
+    .departments-a-z-page li {
+        font-size: 0.92rem;
+    }
+
+    .departments-a-z-page .about-stat-card strong {
+        font-size: clamp(1.3rem, 7vw, 1.8rem);
+    }
+
+    .departments-a-z-page .news-card h3,
+    .departments-a-z-page .feature-card h3,
+    .departments-a-z-page .callout h2 {
+        font-size: 1rem;
+    }
+}
+</style>
 
 <section
     class="page-hero"

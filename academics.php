@@ -1,8 +1,96 @@
 <?php
 $pageTitle = 'Academics';
 $pageDescription = 'Explore programs, faculties, and academic pathways at Christian University College.';
+$bodyClass = 'academics-page';
 include 'includes/header.php';
 ?>
+
+<style>
+@media (max-width: 720px) {
+	.academics-page .page-hero {
+		padding: 40px 0 20px;
+	}
+
+	.academics-page .section {
+		padding: 1.5rem 0;
+	}
+
+	.academics-page .section-heading {
+		margin-bottom: 1rem;
+		text-align: left;
+	}
+
+	.academics-page .section-heading h2 {
+		font-size: clamp(1.3rem, 4vw, 1.6rem);
+		margin-bottom: 8px;
+	}
+
+	.academics-page .section-heading p {
+		font-size: 0.9rem;
+	}
+
+	.academics-page .about-stats-grid,
+	.academics-page .news-grid,
+	.academics-page .split-layout,
+	.academics-page .academic-delivery-grid,
+	.academics-page .academic-pillars-grid,
+	.academics-page .academic-downloads-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.academics-page .about-stat-card,
+	.academics-page .news-card,
+	.academics-page .academic-delivery-card,
+	.academics-page .about-pillar-card,
+	.academics-page .download-card,
+	.academics-page .callout {
+		padding: 1rem;
+	}
+
+	.academics-page .btn-row,
+	.academics-page .academic-cta-actions {
+		flex-direction: column;
+		gap: 0.6rem;
+	}
+
+	.academics-page .btn-row .btn,
+	.academics-page .academic-cta-actions .btn {
+		width: 100%;
+	}
+}
+
+@media (max-width: 480px) {
+	.academics-page .page-hero {
+		padding: 34px 0 18px;
+	}
+
+	.academics-page h1 {
+		font-size: clamp(1.75rem, 8vw, 2.15rem);
+	}
+
+	.academics-page h2 {
+		font-size: clamp(1.35rem, 6vw, 1.7rem);
+	}
+
+	.academics-page p,
+	.academics-page li {
+		font-size: 0.92rem;
+	}
+
+	.academics-page .about-stat-card .stat-number {
+		font-size: clamp(1.3rem, 7vw, 1.8rem);
+	}
+
+	.academics-page .news-card h3,
+	.academics-page .academic-delivery-card h3,
+	.academics-page .about-pillar-card h3,
+	.academics-page .download-card h3,
+	.academics-page .callout h3,
+	.academics-page .callout h2 {
+		font-size: 1rem;
+	}
+}
+</style>
 
 
 <section class="page-hero">

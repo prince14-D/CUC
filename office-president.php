@@ -1,8 +1,107 @@
 <?php
 $pageTitle = 'Office of the President';
 $pageDescription = 'Leadership priorities and mandate of the Office of the President at Christian University College.';
+$bodyClass = 'office-president-page';
 include 'includes/header.php';
 ?>
+
+<style>
+@media (max-width: 720px) {
+    .office-president-page .page-hero {
+        padding: 40px 0 20px;
+    }
+
+    .office-president-page .section {
+        padding: 1.5rem 0;
+    }
+
+    .office-president-page .section-heading {
+        margin-bottom: 1rem;
+        text-align: left;
+    }
+
+    .office-president-page .section-heading h2 {
+        font-size: clamp(1.3rem, 4vw, 1.6rem);
+        margin-bottom: 8px;
+    }
+
+    .office-president-page .section-heading p {
+        font-size: 0.9rem;
+    }
+
+    .office-president-page .about-stats-grid,
+    .office-president-page .split-layout,
+    .office-president-page .feature-grid,
+    .office-president-page .about-pillars-grid,
+    .office-president-page .president-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .office-president-page .about-stat-card,
+    .office-president-page .feature-card,
+    .office-president-page .about-pillar-card,
+    .office-president-page .callout,
+    .office-president-page .president-message {
+        padding: 1rem;
+    }
+
+    .office-president-page .president-grid {
+        gap: 1rem;
+    }
+
+    .office-president-page .president-photo-wrap {
+        max-width: 100%;
+    }
+
+    .office-president-page .president-photo {
+        min-height: 240px;
+        height: auto;
+    }
+
+    .office-president-page .btn-row {
+        flex-direction: column;
+        gap: 0.6rem;
+    }
+
+    .office-president-page .btn-row .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .office-president-page .page-hero {
+        padding: 34px 0 18px;
+    }
+
+    .office-president-page h1 {
+        font-size: clamp(1.75rem, 8vw, 2.15rem);
+    }
+
+    .office-president-page h2 {
+        font-size: clamp(1.35rem, 6vw, 1.7rem);
+    }
+
+    .office-president-page p,
+    .office-president-page li {
+        font-size: 0.92rem;
+    }
+
+    .office-president-page .about-stat-card strong {
+        font-size: clamp(1.3rem, 7vw, 1.8rem);
+    }
+
+    .office-president-page .president-photo {
+        min-height: 200px;
+    }
+
+    .office-president-page .feature-card h3,
+    .office-president-page .about-pillar-card h3,
+    .office-president-page .callout h2,
+    .office-president-page .president-message h2 {
+        font-size: 1rem;
+    }
+}
+</style>
 
 <section
     class="page-hero office-president-hero"

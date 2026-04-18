@@ -17,12 +17,13 @@
 				<a href="admissions.php">Admissions</a>
 				<a href="news.php">News and Events</a>
 				<a href="admission-interest-admin.php">Admin</a>
+				<a href="news-admin-login.php">Admin Login</a>
 			</section>
 
 			<section>
 				<h4>Contact</h4>
 				<p>Paynesville City, Montserrado County, Liberia</p>
-				<p>+231 77 000 0000</p>
+				<p>+231 88 1846 653</p>
 				<p>admissions@cuc.edu.lr</p>
 			</section>
 		</div>
@@ -34,7 +35,7 @@
 
 	<a
 		class="global-whatsapp-float"
-		href="https://wa.me/231770000000?text=Hello%20CUC%2C%20I%20need%20assistance."
+		href="https://wa.me/231881846653?text=Hello%20CUC%2C%20I%20need%20assistance."
 		target="_blank"
 		rel="noopener noreferrer"
 		title="Chat with CUC on WhatsApp"

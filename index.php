@@ -1,8 +1,210 @@
 <?php
+require_once __DIR__ . '/includes/news_storage.php';
+
+$homeNewsPosts = array_slice(cuc_get_published_news(), 0, 3);
+
 $pageTitle = 'Home';
 $pageDescription = 'Christian University College homepage with programs, admissions, events, and university highlights.';
+$bodyClass = 'home-page';
 include 'includes/header.php';
 ?>
+
+<style>
+@media (max-width: 720px) {
+    .home-page .page-hero {
+        padding: 40px 0 20px;
+    }
+
+    .home-page .slide-content {
+        min-height: 500px;
+        max-width: 100%;
+        padding: 52px 0 74px;
+    }
+
+    .home-page .slide-content h1,
+    .home-page .slide-content h2 {
+        font-size: clamp(1.45rem, 5.4vw, 1.95rem);
+        line-height: 1.28;
+    }
+
+    .home-page .slide-content p {
+        max-width: 100%;
+        font-size: 0.96rem;
+        line-height: 1.6;
+    }
+
+    .home-page .hero-slider {
+        min-height: auto;
+    }
+
+    .home-page .btn-row {
+        flex-direction: column;
+        gap: 0.6rem;
+    }
+
+    .home-page .btn-row .btn {
+        width: 100%;
+    }
+
+    .home-page .section {
+        padding: 1.5rem 0;
+    }
+
+    .home-page .section-heading {
+        margin-bottom: 1rem;
+        text-align: left;
+    }
+
+    .home-page .section-heading h2 {
+        font-size: clamp(1.3rem, 4vw, 1.6rem);
+        margin-bottom: 8px;
+    }
+
+    .home-page .section-heading p {
+        font-size: 0.9rem;
+    }
+
+    .home-page .stats-grid,
+    .home-page .president-grid,
+    .home-page .campus-life-grid,
+    .home-page .why-video-grid,
+    .home-page .split-layout,
+    .home-page .partners-grid,
+    .home-page .testimonial-slider,
+    .home-page .news-grid,
+    .home-page .downloads-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .home-page .stats-grid,
+    .home-page .about-stats-grid,
+    .home-page .campus-life-highlights,
+    .home-page .why-points-grid,
+    .home-page .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .home-page .president-grid,
+    .home-page .campus-life-grid,
+    .home-page .why-video-grid,
+    .home-page .partner-card--liberia {
+        gap: 1rem;
+    }
+
+    .home-page .partner-brand {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .home-page .partner-card--liberia {
+        grid-template-columns: 1fr;
+    }
+
+    .home-page .partner-photo-left,
+    .home-page .partner-logo {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+    }
+
+    .home-page .campus-life-media img,
+    .home-page .president-photo,
+    .home-page .testimonial-avatar,
+    .home-page .news-card-image {
+        height: auto;
+    }
+
+    .home-page .testimonial-slider {
+        display: grid;
+        gap: 1rem;
+        max-width: 100%;
+        min-height: auto;
+    }
+
+    .home-page .testimonial-card {
+        position: relative;
+        inset: auto;
+        opacity: 1;
+        transform: none;
+        pointer-events: auto;
+    }
+
+    .home-page .testimonial-dots {
+        position: static;
+        margin-top: 0.75rem;
+        justify-content: center;
+        transform: none;
+    }
+
+    .home-page .callout,
+    .home-page .news-card,
+    .home-page .feature-card,
+    .home-page .program-item,
+    .home-page .download-card,
+    .home-page .partner-card,
+    .home-page .campus-item,
+    .home-page .why-point,
+    .home-page .about-stat-card,
+    .home-page .stat-card {
+        padding: 1rem;
+    }
+
+    .home-page .testimonial-card {
+        padding: 1rem;
+        min-height: auto;
+    }
+
+    .home-page .testimonial-person {
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    .home-page .page-hero {
+        padding: 34px 0 18px;
+    }
+
+    .home-page h1 {
+        font-size: clamp(1.75rem, 8vw, 2.15rem);
+    }
+
+    .home-page h2 {
+        font-size: clamp(1.35rem, 6vw, 1.7rem);
+    }
+
+    .home-page p,
+    .home-page li {
+        font-size: 0.92rem;
+    }
+
+    .home-page .slide-content {
+        min-height: 460px;
+        padding: 44px 0 68px;
+    }
+
+    .home-page .campus-life-media img {
+        min-height: 240px;
+    }
+
+    .home-page .partner-logo {
+        width: 44px;
+        height: 44px;
+    }
+
+    .home-page .partner-photo-left {
+        min-height: 180px;
+        object-fit: cover;
+    }
+
+    .home-page .youtube-embed iframe {
+        min-height: 220px;
+    }
+
+    .home-page .testimonial-card {
+        min-height: auto;
+    }
+}
+</style>
 
 <section class="hero-slider" aria-label="Featured university highlights" data-autoplay-ms="5000">
     <article class="slide is-active">
@@ -307,6 +509,27 @@ It is with great joy that I welcome you to our Christian University College. You
                     <li>HLACT - International UAS</li>
                 </ul>
             </article>
+
+            <article class="partner-card partner-card--liberia">
+                <img src="assets/images/logo.jpg" alt="CUC accreditation recognition in Liberia" class="partner-photo-left">
+                <div>
+                    <div class="partner-brand partner-brand--liberia">
+                        <div>
+                            <span class="partner-kicker">Liberia Government</span>
+                            <h3>CUC Government Accreditation</h3>
+                        </div>
+                    </div>
+                    <p class="partner-note">
+                        Christian University College (CUC) is accredited by the Government of Liberia through the
+                        National Commission on Higher Education (NCHE).
+                    </p>
+                    <ul class="partner-list" aria-label="Liberia Government Accreditation Details">
+                        <li>Recognized by the National Commission on Higher Education (NCHE), Liberia</li>
+                        <li>Authorized to operate as a higher education institution in Liberia</li>
+                        <li>Committed to national academic quality and regulatory standards</li>
+                    </ul>
+                </div>
+            </article>
         </div>
 
         <div class="partners-cta">
@@ -370,21 +593,29 @@ It is with great joy that I welcome you to our Christian University College. You
             <h2>What's Happening at Christian University College</h2>
         </div>
         <div class="news-grid">
-            <article class="news-card">
-                <p class="meta">March 2026</p>
-                <h3>Admissions Portal Opens for 2026 Intake</h3>
-                <p>Prospective students can now begin applications for all undergraduate pathways.</p>
-            </article>
-            <article class="news-card">
-                <p class="meta">February 2026</p>
-                <h3>CUC Hosts National Youth Leadership Forum</h3>
-                <p>Students engaged policy leaders, entrepreneurs, and educators in a two-day summit.</p>
-            </article>
-            <article class="news-card">
-                <p class="meta">January 2026</p>
-                <h3>New Digital Innovation Lab Commissioned</h3>
-                <p>The lab expands hands-on technology learning and research opportunities.</p>
-            </article>
+            <?php if (empty($homeNewsPosts)): ?>
+                <article class="news-card">
+                    <p class="meta"><?= htmlspecialchars(date('F Y'), ENT_QUOTES, 'UTF-8') ?></p>
+                    <h3>Fresh updates will appear here</h3>
+                    <p>The latest school updates from the News Admin panel will automatically show on this homepage section.</p>
+                </article>
+            <?php else: ?>
+                <?php foreach ($homeNewsPosts as $post): ?>
+                    <article class="news-card">
+                        <?php if ((string)($post['image_path'] ?? '') !== ''): ?>
+                            <img
+                                class="news-card-image"
+                                src="<?= htmlspecialchars((string)$post['image_path'], ENT_QUOTES, 'UTF-8') ?>"
+                                alt="<?= htmlspecialchars((string)$post['title'], ENT_QUOTES, 'UTF-8') ?>">
+                        <?php endif; ?>
+                        <p class="meta">
+                            <?= htmlspecialchars(date('F j, Y', strtotime((string)$post['publish_date'])), ENT_QUOTES, 'UTF-8') ?>
+                        </p>
+                        <h3><?= htmlspecialchars((string)$post['title'], ENT_QUOTES, 'UTF-8') ?></h3>
+                        <p><?= htmlspecialchars((string)$post['summary'], ENT_QUOTES, 'UTF-8') ?></p>
+                    </article>
+                <?php endforeach; ?>
+            <?php endif; ?>
         </div>
         <a href="news.php" class="text-link">Read more stories</a>
     </div>
@@ -402,7 +633,7 @@ It is with great joy that I welcome you to our Christian University College. You
             <article class="download-card">
                 <h3>New Admission Information</h3>
                 <p>Get admission requirements, application steps, tuition guidance, and important contacts.</p>
-                <a href="assets/docs/new-admission-info.pdf" class="btn btn-primary" download>Download PDF</a>
+                <a href="assets/docs/CHRISTIAN UNIVERSITY COLLEGE APPLICATION FORM.pdf" class="btn btn-primary" download>Download PDF</a>
             </article>
 
             <article class="download-card">

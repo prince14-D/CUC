@@ -478,11 +478,16 @@ h3 {
 }
 
 .stat-number {
+    display: block;
     opacity: 0.65;
     transition: opacity 0.35s ease;
 }
 
 .stats-band.is-visible .stat-number {
+    opacity: 1;
+}
+
+.about-highlight-band.is-visible .stat-number {
     opacity: 1;
 }
 
@@ -682,6 +687,65 @@ h3 {
     background: linear-gradient(180deg, rgba(246, 243, 237, 0.9), #fff);
 }
 
+.donation-hero-inner {
+    max-width: 860px;
+}
+
+.donation-hero p {
+    max-width: 60ch;
+}
+
+.donation-layout {
+    display: grid;
+    gap: 28px;
+    justify-items: center;
+}
+
+.donation-layout .callout {
+    height: 100%;
+}
+
+.donation-layout > .callout {
+    width: min(100%, 920px);
+}
+
+.donation-form-card {
+    width: min(100%, 760px);
+}
+
+.donation-section .contact-form input,
+.donation-section .contact-form select,
+.donation-section .contact-form textarea {
+    width: 100%;
+}
+
+.donation-amount-presets {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.donation-amount-chip {
+    border: 1px solid rgba(140, 21, 21, 0.22);
+    background: rgba(140, 21, 21, 0.06);
+    color: var(--color-cardinal-dark);
+    border-radius: 999px;
+    padding: 10px 14px;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.donation-amount-chip:hover,
+.donation-amount-chip:focus-visible,
+.donation-amount-chip.is-active {
+    background: var(--color-cardinal);
+    border-color: var(--color-cardinal);
+    color: #fff;
+    transform: translateY(-1px);
+}
+
 .section-heading {
     text-align: center;
     max-width: 760px;
@@ -843,6 +907,26 @@ h3 {
     font-size: 0.92rem;
 }
 
+.partner-card--liberia {
+    display: grid;
+    grid-template-columns: 120px minmax(0, 1fr);
+    gap: 16px;
+    align-items: start;
+}
+
+.partner-photo-left {
+    width: 120px;
+    height: 120px;
+    border-radius: 12px;
+    object-fit: cover;
+    border: 1px solid var(--color-border);
+    box-shadow: 0 10px 24px rgba(20, 27, 45, 0.12);
+}
+
+.partner-brand--liberia {
+    margin-bottom: 8px;
+}
+
 .partner-list {
     margin: 0;
     padding: 0;
@@ -892,6 +976,19 @@ h3 {
     padding: 1rem;
     box-shadow: var(--shadow-soft);
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.accreditation-photo-card {
+    padding: 0;
+    overflow: hidden;
+}
+
+.accreditation-photo-image {
+    width: 100%;
+    min-height: 320px;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .department-photo-card:hover {
@@ -1156,6 +1253,73 @@ h3 {
     font-size: 0.86rem;
 }
 
+.news-card-image {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    border: 1px solid var(--color-border);
+}
+
+.news-upload-dropzone {
+    margin-top: 0.35rem;
+    border: 2px dashed rgba(20, 27, 45, 0.28);
+    border-radius: 12px;
+    padding: 18px 14px;
+    text-align: center;
+    background: linear-gradient(135deg, #ffffff 0%, rgba(246, 243, 237, 0.85) 100%);
+    cursor: pointer;
+    transition: border-color 200ms ease, background-color 200ms ease, transform 200ms ease;
+}
+
+.news-upload-dropzone strong {
+    display: block;
+    color: var(--color-ink);
+    margin-bottom: 2px;
+}
+
+.news-upload-dropzone span {
+    color: var(--color-ink-soft);
+    font-size: 0.92rem;
+}
+
+.news-upload-dropzone:hover,
+.news-upload-dropzone:focus-visible,
+.news-upload-dropzone.is-dragging {
+    border-color: var(--color-cardinal);
+    background: rgba(140, 21, 21, 0.06);
+    transform: translateY(-1px);
+    outline: none;
+}
+
+.news-image-input {
+    margin-top: 0.6rem;
+}
+
+.news-image-feedback {
+    margin-top: 0.45rem;
+    font-size: 0.9rem;
+    color: #1a6d2e;
+    min-height: 1.2em;
+}
+
+.news-image-feedback.is-error {
+    color: #8c1515;
+}
+
+.news-image-preview-wrap {
+    margin-top: 0.85rem;
+}
+
+.news-image-preview {
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    border-radius: 10px;
+    border: 1px solid var(--color-border);
+}
+
 .event-list {
     display: grid;
     gap: 16px;
@@ -1168,6 +1332,17 @@ h3 {
     padding: 16px 18px;
     box-shadow: var(--shadow-soft);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-card-image {
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 14px;
+    border: 1px solid var(--color-border);
 }
 
 .event-list article:hover {
@@ -2606,6 +2781,16 @@ h3 {
         padding: 1rem;
     }
 
+    .partner-card--liberia {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .partner-photo-left {
+        width: 72px;
+        height: 72px;
+    }
+
     .partner-logo {
         width: 46px;
         height: 46px;
@@ -2856,6 +3041,48 @@ h3 {
         width: 100%;
     }
 
+    .donation-hero .container {
+        max-width: 100%;
+    }
+
+    .donation-hero p {
+        max-width: 100%;
+    }
+
+    .donation-layout {
+        gap: 1rem;
+    }
+
+    .donation-layout .callout {
+        padding: 1.25rem;
+    }
+
+    .donation-layout > .callout,
+    .donation-form-card {
+        width: 100%;
+    }
+
+    .donation-section .contact-form {
+        gap: 10px;
+    }
+
+    .donation-amount-presets {
+        gap: 8px;
+    }
+
+    .donation-amount-chip {
+        width: calc(50% - 4px);
+        padding: 10px 12px;
+    }
+
+@media (max-width: 480px) {
+}
+
+@media (max-width: 420px) {
+    .donation-amount-chip {
+        width: 100%;
+    }
+}
     /* Event list */
     .event-list {
         gap: 1rem;

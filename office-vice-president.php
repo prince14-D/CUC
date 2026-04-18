@@ -1,8 +1,107 @@
 <?php
 $pageTitle = 'Office of the Vice President';
 $pageDescription = 'Administrative and academic coordination role of the Office of the Vice President at Christian University College.';
+$bodyClass = 'office-vice-president-page';
 include 'includes/header.php';
 ?>
+
+<style>
+@media (max-width: 720px) {
+    .office-vice-president-page .page-hero {
+        padding: 40px 0 20px;
+    }
+
+    .office-vice-president-page .section {
+        padding: 1.5rem 0;
+    }
+
+    .office-vice-president-page .section-heading {
+        margin-bottom: 1rem;
+        text-align: left;
+    }
+
+    .office-vice-president-page .section-heading h2 {
+        font-size: clamp(1.3rem, 4vw, 1.6rem);
+        margin-bottom: 8px;
+    }
+
+    .office-vice-president-page .section-heading p {
+        font-size: 0.9rem;
+    }
+
+    .office-vice-president-page .about-stats-grid,
+    .office-vice-president-page .split-layout,
+    .office-vice-president-page .feature-grid,
+    .office-vice-president-page .about-pillars-grid,
+    .office-vice-president-page .president-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .office-vice-president-page .about-stat-card,
+    .office-vice-president-page .feature-card,
+    .office-vice-president-page .about-pillar-card,
+    .office-vice-president-page .callout,
+    .office-vice-president-page .president-message {
+        padding: 1rem;
+    }
+
+    .office-vice-president-page .president-grid {
+        gap: 1rem;
+    }
+
+    .office-vice-president-page .president-photo-wrap {
+        max-width: 100%;
+    }
+
+    .office-vice-president-page .president-photo {
+        min-height: 240px;
+        height: auto;
+    }
+
+    .office-vice-president-page .btn-row {
+        flex-direction: column;
+        gap: 0.6rem;
+    }
+
+    .office-vice-president-page .btn-row .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .office-vice-president-page .page-hero {
+        padding: 34px 0 18px;
+    }
+
+    .office-vice-president-page h1 {
+        font-size: clamp(1.75rem, 8vw, 2.15rem);
+    }
+
+    .office-vice-president-page h2 {
+        font-size: clamp(1.35rem, 6vw, 1.7rem);
+    }
+
+    .office-vice-president-page p,
+    .office-vice-president-page li {
+        font-size: 0.92rem;
+    }
+
+    .office-vice-president-page .about-stat-card strong {
+        font-size: clamp(1.3rem, 7vw, 1.8rem);
+    }
+
+    .office-vice-president-page .president-photo {
+        min-height: 200px;
+    }
+
+    .office-vice-president-page .feature-card h3,
+    .office-vice-president-page .about-pillar-card h3,
+    .office-vice-president-page .callout h2,
+    .office-vice-president-page .president-message h2 {
+        font-size: 1rem;
+    }
+}
+</style>
 
 <section
     class="page-hero office-vice-president-hero"

@@ -1,8 +1,93 @@
 <?php
 $pageTitle = 'History';
 $pageDescription = 'History and milestones of Christian University College.';
+$bodyClass = 'history-page';
 include 'includes/header.php';
 ?>
+
+<style>
+@media (max-width: 720px) {
+    .history-page .page-hero {
+        padding: 40px 0 20px;
+    }
+
+    .history-page .section {
+        padding: 1.5rem 0;
+    }
+
+    .history-page .section-heading {
+        margin-bottom: 1rem;
+        text-align: left;
+    }
+
+    .history-page .section-heading h2 {
+        font-size: clamp(1.3rem, 4vw, 1.6rem);
+        margin-bottom: 8px;
+    }
+
+    .history-page .section-heading p {
+        font-size: 0.9rem;
+    }
+
+    .history-page .about-stats-grid,
+    .history-page .split-layout,
+    .history-page .about-pillars-grid,
+    .history-page .about-timeline,
+    .history-page .news-grid,
+    .history-page .downloads-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .history-page .about-stat-card,
+    .history-page .callout,
+    .history-page .about-pillar-card,
+    .history-page .news-card,
+    .history-page .download-card,
+    .history-page .about-timeline article {
+        padding: 1rem;
+    }
+
+    .history-page .btn-row {
+        flex-direction: column;
+        gap: 0.6rem;
+    }
+
+    .history-page .btn-row .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .history-page .page-hero {
+        padding: 34px 0 18px;
+    }
+
+    .history-page h1 {
+        font-size: clamp(1.75rem, 8vw, 2.15rem);
+    }
+
+    .history-page h2 {
+        font-size: clamp(1.35rem, 6vw, 1.7rem);
+    }
+
+    .history-page p,
+    .history-page li {
+        font-size: 0.92rem;
+    }
+
+    .history-page .about-stat-card strong {
+        font-size: clamp(1.3rem, 7vw, 1.8rem);
+    }
+
+    .history-page .about-timeline h3,
+    .history-page .news-card h3,
+    .history-page .download-card h3,
+    .history-page .about-pillar-card h3,
+    .history-page .callout h3 {
+        font-size: 1rem;
+    }
+}
+</style>
 
 <section class="page-hero history-hero">
     <div class="container">

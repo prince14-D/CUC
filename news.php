@@ -1,8 +1,122 @@
 <?php
+require_once __DIR__ . '/includes/news_storage.php';
+
+$publishedPosts = cuc_get_published_news();
+$upcomingEvents = cuc_get_upcoming_events();
+$latestMonthLabel = cuc_latest_news_month_label($publishedPosts);
+$latestStories = [];
+
+if ($latestMonthLabel !== null) {
+	$latestStories = array_values(
+		array_filter(
+			$publishedPosts,
+			static fn(array $post): bool => (string)$post['month_label'] === $latestMonthLabel
+		)
+	);
+}
+
+if (empty($latestStories)) {
+	$latestStories = array_slice($publishedPosts, 0, 6);
+}
+
 $pageTitle = 'News';
 $pageDescription = 'Latest news, research updates, and upcoming events from Christian University College.';
+$bodyClass = 'news-page';
 include 'includes/header.php';
 ?>
+
+<style>
+@media (max-width: 720px) {
+	.news-page .page-hero {
+		padding: 40px 0 20px;
+	}
+
+	.news-page .section {
+		padding: 1.5rem 0;
+	}
+
+	.news-page .section-heading {
+		margin-bottom: 1rem;
+		text-align: left;
+	}
+
+	.news-page .section-heading h2 {
+		font-size: clamp(1.3rem, 4vw, 1.6rem);
+		margin-bottom: 8px;
+	}
+
+	.news-page .section-heading p {
+		font-size: 0.9rem;
+	}
+
+	.news-page .about-stats-grid,
+	.news-page .news-grid,
+	.news-page .feature-grid,
+	.news-page .split-layout {
+		grid-template-columns: 1fr;
+	}
+
+	.news-page .about-stat-card,
+	.news-page .news-card,
+	.news-page .feature-card,
+	.news-page .callout,
+	.news-page .event-list article {
+		padding: 1rem;
+	}
+
+	.news-page .news-card-image,
+	.news-page .event-card-image {
+		width: 100%;
+		height: auto;
+		aspect-ratio: 4 / 3;
+		object-fit: cover;
+	}
+
+	.news-page .btn-row {
+		flex-direction: column;
+		gap: 0.6rem;
+	}
+
+	.news-page .btn-row .btn,
+	.news-page .cta-inner .btn,
+	.news-page .callout .btn {
+		width: 100%;
+	}
+}
+
+@media (max-width: 480px) {
+	.news-page .page-hero {
+		padding: 34px 0 18px;
+	}
+
+	.news-page h1 {
+		font-size: clamp(1.75rem, 8vw, 2.15rem);
+	}
+
+	.news-page h2 {
+		font-size: clamp(1.35rem, 6vw, 1.7rem);
+	}
+
+	.news-page p,
+	.news-page li,
+	.news-page input,
+	.news-page button {
+		font-size: 0.92rem;
+	}
+
+	.news-page .about-stat-card strong {
+		font-size: clamp(1.3rem, 7vw, 1.8rem);
+	}
+
+	.news-page .news-card h3,
+	.news-page .feature-card h3,
+	.news-page .event-list article h3,
+	.news-page .callout h2,
+	.news-page .cta-inner h2 {
+		font-size: 1rem;
+	}
+}
+</style>
 
 <section
 	class="page-hero"
@@ -39,34 +153,43 @@ include 'includes/header.php';
 	<div class="container">
 		<div class="section-heading">
 			<span class="eyebrow">Latest Stories</span>
-			<h2>Recent News from Campus</h2>
-			<p>Discover recent achievements, announcements, and major campus developments.</p>
+			<h2>
+				<?= $latestMonthLabel !== null
+					? 'Latest Updates for ' . htmlspecialchars($latestMonthLabel, ENT_QUOTES, 'UTF-8')
+					: 'Recent News from Campus' ?>
+			</h2>
+			<p>Discover recent achievements, announcements, and major campus developments posted by the school admin team.</p>
 		</div>
 		<div class="news-grid">
-			<article class="news-card reveal-on-scroll">
-				<p class="meta">March 27, 2026</p>
-				<h3>CUC Job Vacancy Board Is Now Live</h3>
-				<p>Looking to join Christian University College? Explore current openings across academic and administrative roles.</p>
-				<a href="job-vacancy.php" class="link-arrow">View Job Vacancies →</a>
-			</article>
-			<article class="news-card reveal-on-scroll">
-				<p class="meta">March 18, 2026</p>
-				<h3>Admissions Office Announces Merit Scholarship Window</h3>
-				<p>Eligible first-year students may apply for tuition support during the 2026 intake cycle. Details available at admissions office.</p>
-				<a href="#" class="link-arrow">Read More →</a>
-			</article>
-			<article class="news-card reveal-on-scroll">
-				<p class="meta">March 4, 2026</p>
-				<h3>CUC Debate Team Wins National University Invitational</h3>
-				<p>The team secured first place with strong performance in public policy and ethics rounds, representing the institution with pride.</p>
-				<a href="#" class="link-arrow">Read More →</a>
-			</article>
-			<article class="news-card reveal-on-scroll">
-				<p class="meta">February 20, 2026</p>
-				<h3>Faculty Publish New Research on Youth Entrepreneurship</h3>
-				<p>A cross-disciplinary study highlights scalable solutions for job creation in local communities across West Africa.</p>
-				<a href="#" class="link-arrow">Read More →</a>
-			</article>
+			<?php if (empty($latestStories)): ?>
+				<article class="news-card reveal-on-scroll">
+					<p class="meta"><?= htmlspecialchars(date('F j, Y'), ENT_QUOTES, 'UTF-8') ?></p>
+					<h3>No monthly updates posted yet</h3>
+					<p>The news admin can post the latest school updates and they will automatically appear here.</p>
+					<a href="contact.php" class="link-arrow">Contact Office for Updates -&gt;</a>
+				</article>
+			<?php else: ?>
+				<?php foreach (array_slice($latestStories, 0, 6) as $post): ?>
+					<article class="news-card reveal-on-scroll">
+						<?php if ((string)($post['image_path'] ?? '') !== ''): ?>
+							<img
+								class="news-card-image"
+								src="<?= htmlspecialchars((string)$post['image_path'], ENT_QUOTES, 'UTF-8') ?>"
+								alt="<?= htmlspecialchars((string)$post['title'], ENT_QUOTES, 'UTF-8') ?>">
+						<?php endif; ?>
+						<p class="meta">
+							<?= htmlspecialchars(date('F j, Y', strtotime((string)$post['publish_date'])), ENT_QUOTES, 'UTF-8') ?>
+							|
+							<?= htmlspecialchars((string)$post['month_label'], ENT_QUOTES, 'UTF-8') ?>
+						</p>
+						<h3><?= htmlspecialchars((string)$post['title'], ENT_QUOTES, 'UTF-8') ?></h3>
+						<p><?= htmlspecialchars((string)$post['summary'], ENT_QUOTES, 'UTF-8') ?></p>
+						<a href="<?= htmlspecialchars((string)$post['url'], ENT_QUOTES, 'UTF-8') ?>" class="link-arrow">
+							<?= ((string)$post['url'] === '#' ? 'Update Coming Soon' : 'Read More') ?> -&gt;
+						</a>
+					</article>
+				<?php endforeach; ?>
+			<?php endif; ?>
 		</div>
 	</div>
 </section>
@@ -79,27 +202,28 @@ include 'includes/header.php';
 			<p>Join us for important campus events, academic forums, and community engagement opportunities.</p>
 		</div>
 		<div class="event-list">
-			<article class="reveal-on-scroll">
-				<h3>Open Campus Day</h3>
-				<p><strong>Date:</strong> April 12, 2026 at 9:00 AM</p>
-				<p><strong>Location:</strong> Main Campus</p>
-				<p>Prospective students and families tour programs, facilities, student services, and meet faculty advisors.</p>
-				<a href="admissions.php" class="btn btn-sm btn-primary">Register Now</a>
-			</article>
-			<article class="reveal-on-scroll">
-				<h3>Innovation and Entrepreneurship Summit</h3>
-				<p><strong>Date:</strong> May 6, 2026 at 10:00 AM</p>
-				<p><strong>Location:</strong> Conference Hall</p>
-				<p>Industry leaders and faculty explore business innovation in emerging economies. Open to students and entrepreneurs.</p>
-				<a href="contact.php" class="btn btn-sm btn-primary">Learn More</a>
-			</article>
-			<article class="reveal-on-scroll">
-				<h3>Graduation Ceremony</h3>
-				<p><strong>Date:</strong> June 28, 2026 at 10:00 AM</p>
-				<p><strong>Location:</strong> Main Auditorium</p>
-				<p>CUC celebrates the graduating class and honors distinguished academic performance and leadership achievements.</p>
-				<a href="contact.php" class="btn btn-sm btn-primary">More Details</a>
-			</article>
+			<?php if (empty($upcomingEvents)): ?>
+				<article class="reveal-on-scroll">
+					<h3>No upcoming events posted yet</h3>
+					<p>Admins can post future events from the News Admin page and they will appear here automatically.</p>
+					<a href="news-admin.php" class="btn btn-sm btn-primary">Open Admin</a>
+				</article>
+			<?php else: ?>
+				<?php foreach (array_slice($upcomingEvents, 0, 3) as $event): ?>
+					<article class="reveal-on-scroll">
+						<?php if ((string)($event['image_path'] ?? '') !== ''): ?>
+							<img class="event-card-image" src="<?= htmlspecialchars((string)$event['image_path'], ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars((string)$event['title'], ENT_QUOTES, 'UTF-8') ?>">
+						<?php endif; ?>
+						<h3><?= htmlspecialchars((string)$event['title'], ENT_QUOTES, 'UTF-8') ?></h3>
+						<p><strong>Date:</strong> <?= htmlspecialchars(date('F j, Y', strtotime((string)$event['event_date'])), ENT_QUOTES, 'UTF-8') ?><?= (string)($event['event_time'] ?? '') !== '' ? ' at ' . htmlspecialchars((string)$event['event_time'], ENT_QUOTES, 'UTF-8') : '' ?></p>
+						<p><strong>Location:</strong> <?= htmlspecialchars((string)$event['location'], ENT_QUOTES, 'UTF-8') ?></p>
+						<p><?= htmlspecialchars((string)$event['summary'], ENT_QUOTES, 'UTF-8') ?></p>
+						<a href="<?= htmlspecialchars((string)$event['url'], ENT_QUOTES, 'UTF-8') ?>" class="btn btn-sm btn-primary">
+							<?= ((string)$event['url'] === '#' ? 'Learn More' : 'Register / Learn More') ?>
+						</a>
+					</article>
+				<?php endforeach; ?>
+			<?php endif; ?>
 		</div>
 	</div>
 </section>
@@ -199,7 +323,10 @@ include 'includes/header.php';
 				<li>Press release archives and publication submissions</li>
 				<li>Contact information for media and journalist inquiries</li>
 			</ul>
-			<a href="contact.php" class="btn btn-primary" style="margin-top: 1rem;">Request Media Kit</a>
+			<div class="btn-row" style="margin-top: 1rem;">
+				<a href="contact.php" class="btn btn-primary">Request Media Kit</a>
+				<a href="news-admin.php" class="btn btn-light">News Admin</a>
+			</div>
 		</article>
 	</div>
 </section>

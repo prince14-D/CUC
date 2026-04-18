@@ -1,8 +1,86 @@
 <?php
 $pageTitle = 'Academic Calendar';
 $pageDescription = 'Academic calendar and key dates at Christian University College.';
+$bodyClass = 'academic-calendar-page';
 include 'includes/header.php';
 ?>
+
+<style>
+@media (max-width: 720px) {
+    .academic-calendar-page .page-hero {
+        padding: 40px 0 20px;
+    }
+
+    .academic-calendar-page .section {
+        padding: 1.5rem 0;
+    }
+
+    .academic-calendar-page .section-heading {
+        margin-bottom: 1rem;
+        text-align: left;
+    }
+
+    .academic-calendar-page .section-heading h2 {
+        font-size: clamp(1.3rem, 4vw, 1.6rem);
+        margin-bottom: 8px;
+    }
+
+    .academic-calendar-page .section-heading p {
+        font-size: 0.9rem;
+    }
+
+    .academic-calendar-page .about-stats-grid,
+    .academic-calendar-page .news-grid,
+    .academic-calendar-page .split-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .academic-calendar-page .about-stat-card,
+    .academic-calendar-page .news-card,
+    .academic-calendar-page .callout,
+    .academic-calendar-page .event-list article {
+        padding: 1rem;
+    }
+
+    .academic-calendar-page .btn-row {
+        flex-direction: column;
+        gap: 0.6rem;
+    }
+
+    .academic-calendar-page .btn-row .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .academic-calendar-page .page-hero {
+        padding: 34px 0 18px;
+    }
+
+    .academic-calendar-page h1 {
+        font-size: clamp(1.75rem, 8vw, 2.15rem);
+    }
+
+    .academic-calendar-page h2 {
+        font-size: clamp(1.35rem, 6vw, 1.7rem);
+    }
+
+    .academic-calendar-page p,
+    .academic-calendar-page li {
+        font-size: 0.92rem;
+    }
+
+    .academic-calendar-page .about-stat-card strong {
+        font-size: clamp(1.3rem, 7vw, 1.8rem);
+    }
+
+    .academic-calendar-page .event-list article h3,
+    .academic-calendar-page .news-card h3,
+    .academic-calendar-page .callout h2 {
+        font-size: 1rem;
+    }
+}
+</style>
 
 <section
     class="page-hero"

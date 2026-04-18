@@ -125,7 +125,7 @@ include 'includes/header.php';
             <h2>Need Clarification on a Policy?</h2>
             <p>Our teams are available to help you understand expectations and make informed academic decisions.</p>
             <p><strong>Email:</strong> studentsupport@cuc.edu.lr</p>
-            <p><strong>Phone:</strong> +231 88 000 0000</p>
+            <p><strong>Phone:</strong> +231 88 1846 653</p>
         </article>
     </div>
 </section>

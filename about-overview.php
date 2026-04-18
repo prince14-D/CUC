@@ -1,8 +1,98 @@
 <?php
 $pageTitle = 'About Overview';
 $pageDescription = 'Overview of Christian University College, mission, vision, and institutional values.';
+$bodyClass = 'about-overview-page';
 include 'includes/header.php';
 ?>
+
+<style>
+@media (max-width: 720px) {
+    .about-overview-page .page-hero {
+        padding: 40px 0 20px;
+    }
+
+    .about-overview-page .section {
+        padding: 1.5rem 0;
+    }
+
+    .about-overview-page .section-heading {
+        margin-bottom: 1rem;
+        text-align: left;
+    }
+
+    .about-overview-page .section-heading h2 {
+        font-size: clamp(1.3rem, 4vw, 1.6rem);
+        margin-bottom: 8px;
+    }
+
+    .about-overview-page .section-heading p {
+        font-size: 0.9rem;
+    }
+
+    .about-overview-page .about-stats-grid,
+    .about-overview-page .feature-grid,
+    .about-overview-page .about-pillars-grid,
+    .about-overview-page .about-timeline,
+    .about-overview-page .split-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .about-overview-page .about-stat-card,
+    .about-overview-page .feature-card,
+    .about-overview-page .about-pillar-card,
+    .about-overview-page .about-timeline article,
+    .about-overview-page .callout {
+        padding: 1rem;
+    }
+
+    .about-overview-page .about-timeline article {
+        border-left-width: 4px;
+    }
+
+    .about-overview-page .cta .container {
+        padding: 1rem 0;
+    }
+
+    .about-overview-page .btn-row {
+        flex-direction: column;
+        gap: 0.6rem;
+    }
+
+    .about-overview-page .btn-row .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-overview-page .page-hero {
+        padding: 34px 0 18px;
+    }
+
+    .about-overview-page h1 {
+        font-size: clamp(1.75rem, 8vw, 2.15rem);
+    }
+
+    .about-overview-page h2 {
+        font-size: clamp(1.35rem, 6vw, 1.7rem);
+    }
+
+    .about-overview-page p,
+    .about-overview-page li {
+        font-size: 0.92rem;
+    }
+
+    .about-overview-page .about-stat-card strong {
+        font-size: clamp(1.3rem, 7vw, 1.8rem);
+    }
+
+    .about-overview-page .about-timeline h3,
+    .about-overview-page .about-pillar-card h3,
+    .about-overview-page .feature-card h3,
+    .about-overview-page .callout h3 {
+        font-size: 1rem;
+    }
+}
+</style>
 
 <section class="page-hero about-overview-hero">
     <div class="container">

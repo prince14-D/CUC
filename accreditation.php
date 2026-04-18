@@ -1,11 +1,91 @@
 <?php
 $pageTitle = 'Accreditation';
 $pageDescription = 'Accreditation and quality assurance information for Christian University College.';
+$bodyClass = 'accreditation-page';
 include 'includes/header.php';
 ?>
 
+<style>
+@media (max-width: 720px) {
+    .accreditation-page .page-hero {
+        padding: 40px 0 20px;
+    }
+
+    .accreditation-page .section {
+        padding: 1.5rem 0;
+    }
+
+    .accreditation-page .section-heading {
+        margin-bottom: 1rem;
+        text-align: left;
+    }
+
+    .accreditation-page .section-heading h2 {
+        font-size: clamp(1.3rem, 4vw, 1.6rem);
+        margin-bottom: 8px;
+    }
+
+    .accreditation-page .section-heading p {
+        font-size: 0.9rem;
+    }
+
+    .accreditation-page .about-stats-grid,
+    .accreditation-page .news-grid,
+    .accreditation-page .feature-grid,
+    .accreditation-page .split-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .accreditation-page .accreditation-spotlight {
+        grid-template-columns: 1fr;
+    }
+
+    .accreditation-page .accreditation-copy-card {
+        order: 1;
+    }
+
+    .accreditation-page .accreditation-photo-card {
+        order: 2;
+    }
+
+    .accreditation-page .accreditation-photo-image {
+        min-height: 220px;
+    }
+
+    .accreditation-page .callout,
+    .accreditation-page .news-card,
+    .accreditation-page .feature-card,
+    .accreditation-page .about-stat-card {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .accreditation-page .page-hero {
+        padding: 34px 0 18px;
+    }
+
+    .accreditation-page h1 {
+        font-size: clamp(1.75rem, 8vw, 2.15rem);
+    }
+
+    .accreditation-page h2 {
+        font-size: clamp(1.35rem, 6vw, 1.7rem);
+    }
+
+    .accreditation-page p,
+    .accreditation-page li {
+        font-size: 0.92rem;
+    }
+
+    .accreditation-page .accreditation-photo-image {
+        min-height: 180px;
+    }
+}
+</style>
+
 <section
-    class="page-hero"
+    class="page-hero accreditation-hero"
     style="background: linear-gradient(120deg, rgba(20, 27, 45, 0.9), rgba(140, 21, 21, 0.82)), url('assets/images/slider1.jpeg') center/cover no-repeat;">
     <div class="container">
         <span class="eyebrow">Accreditation</span>
@@ -14,28 +94,55 @@ include 'includes/header.php';
     </div>
 </section>
 
-<section class="section about-highlight-band">
+<section class="section about-highlight-band accreditation-stats-section">
     <div class="container about-stats-grid">
         <article class="about-stat-card">
-            <strong>1</strong>
+            <strong class="stat-number" data-target="1">1</strong>
             <span>National Regulatory Authority</span>
         </article>
         <article class="about-stat-card">
-            <strong>40+</strong>
+            <strong class="stat-number" data-target="40" data-suffix="+">40+</strong>
             <span>Programs Under Quality Review</span>
         </article>
         <article class="about-stat-card">
-            <strong>2</strong>
+            <strong class="stat-number" data-target="2">2</strong>
             <span>Semester Monitoring Cycles</span>
         </article>
         <article class="about-stat-card">
-            <strong>100%</strong>
+            <strong class="stat-number" data-target="100" data-suffix="%">100%</strong>
             <span>Compliance Commitment</span>
         </article>
     </div>
 </section>
 
-<section class="section">
+<section class="section accreditation-spotlight-section">
+    <div class="container split-layout accreditation-spotlight">
+        <article class="callout reveal-on-scroll accreditation-photo-card">
+            <img
+                src="assets/images/certificateaccred.jpeg"
+                alt="Accreditation and policy review at Christian University College"
+                class="accreditation-photo-image">
+        </article>
+        <article class="callout reveal-on-scroll accreditation-copy-card">
+            <h2>Accreditation with the Government of Liberia</h2>
+            <p>
+                Christian University College works within the national higher education framework
+                of the Republic of Liberia through the <strong>National Commission on Higher Education (NCHE)</strong>.
+            </p>
+            <p>
+                As Liberia's statutory regulator for higher education, NCHE oversees institutional
+                standards, academic quality, and compliance with approved policy requirements.
+            </p>
+            <ul class="clean-list">
+                <li>Alignment with NCHE institutional and program standards</li>
+                <li>Periodic quality checks and evidence-based compliance review</li>
+                <li>Continuous improvement based on government quality expectations</li>
+            </ul>
+        </article>
+    </div>
+</section>
+
+<section class="section accreditation-recognition-section">
     <div class="container split-layout">
         <article class="callout reveal-on-scroll">
             <h2>Institutional Recognition</h2>
@@ -60,7 +167,7 @@ include 'includes/header.php';
     </div>
 </section>
 
-<section class="section section-tinted">
+<section class="section section-tinted accreditation-status-section">
     <div class="container">
         <div class="section-heading">
             <span class="eyebrow">Accreditation Status</span>
@@ -84,7 +191,7 @@ include 'includes/header.php';
     </div>
 </section>
 
-<section class="section">
+<section class="section accreditation-monitoring-section">
     <div class="container">
         <div class="section-heading">
             <span class="eyebrow">Quality Monitoring Cycle</span>
@@ -119,7 +226,7 @@ include 'includes/header.php';
     </div>
 </section>
 
-<section class="section section-tinted">
+<section class="section section-tinted accreditation-docs-section">
     <div class="container split-layout">
         <article class="callout reveal-on-scroll">
             <h2>Accreditation and Quality Documents</h2>
@@ -130,7 +237,7 @@ include 'includes/header.php';
             <h2>Need Verification or Clarification?</h2>
             <p>For accreditation inquiries, policy interpretation, or institutional compliance details, contact Academic Affairs.</p>
             <p><strong>Email:</strong> academicaffairs@cuc.edu.lr</p>
-            <p><strong>Phone:</strong> +231 77 000 0000</p>
+            <p><strong>Phone:</strong> +231 88 1846 653</p>
         </article>
     </div>
 </section>

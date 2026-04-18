@@ -48,6 +48,7 @@ if ($isAuthenticated && isset($_GET['download']) && $_GET['download'] === 'csv')
 
 $pageTitle = 'Admission Interest Admin';
 $pageDescription = 'Protected admin view for admission interest submissions.';
+$bodyClass = 'admission-interest-admin-page';
 include 'includes/header.php';
 
 $headers = [];
@@ -68,6 +69,82 @@ if ($isAuthenticated && file_exists($storageFile)) {
     $rows = array_reverse($rows);
 }
 ?>
+
+<style>
+@media (max-width: 720px) {
+    .admission-interest-admin-page .page-hero {
+        padding: 40px 0 20px;
+    }
+
+    .admission-interest-admin-page .section {
+        padding: 1.5rem 0;
+    }
+
+    .admission-interest-admin-page .split-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .admission-interest-admin-page .callout,
+    .admission-interest-admin-page .admin-table-wrap {
+        padding: 1rem;
+    }
+
+    .admission-interest-admin-page .btn-row {
+        flex-direction: column;
+        gap: 0.6rem;
+    }
+
+    .admission-interest-admin-page .btn-row .btn,
+    .admission-interest-admin-page .contact-form button,
+    .admission-interest-admin-page .cta-inner .btn {
+        width: 100%;
+    }
+
+    .admission-interest-admin-page .admin-table-wrap {
+        margin-top: 1rem !important;
+    }
+
+    .admission-interest-admin-page .admin-table-wrap > div[style] {
+        border-radius: 10px !important;
+    }
+
+    .admission-interest-admin-page .admin-table-wrap table {
+        min-width: 760px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .admission-interest-admin-page .page-hero {
+        padding: 34px 0 18px;
+    }
+
+    .admission-interest-admin-page h1 {
+        font-size: clamp(1.75rem, 8vw, 2.15rem);
+    }
+
+    .admission-interest-admin-page h2 {
+        font-size: clamp(1.35rem, 6vw, 1.7rem);
+    }
+
+    .admission-interest-admin-page p,
+    .admission-interest-admin-page label,
+    .admission-interest-admin-page input,
+    .admission-interest-admin-page button,
+    .admission-interest-admin-page td,
+    .admission-interest-admin-page th {
+        font-size: 0.92rem;
+    }
+
+    .admission-interest-admin-page .callout h2,
+    .admission-interest-admin-page .cta-inner h2 {
+        font-size: 1rem;
+    }
+
+    .admission-interest-admin-page .admin-table-wrap table {
+        min-width: 680px !important;
+    }
+}
+</style>
 
 <section
     class="page-hero"

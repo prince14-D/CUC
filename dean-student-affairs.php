@@ -1,8 +1,99 @@
 <?php
 $pageTitle = 'Department Deans';
 $pageDescription = 'Office of Department Deans at Christian University College.';
+$bodyClass = 'dean-student-affairs-page';
 include 'includes/header.php';
 ?>
+
+<style>
+@media (max-width: 720px) {
+    .dean-student-affairs-page .page-hero {
+        padding: 40px 0 20px;
+    }
+
+    .dean-student-affairs-page .section {
+        padding: 1.5rem 0;
+    }
+
+    .dean-student-affairs-page .section-heading {
+        margin-bottom: 1rem;
+        text-align: left;
+    }
+
+    .dean-student-affairs-page .section-heading h2 {
+        font-size: clamp(1.3rem, 4vw, 1.6rem);
+        margin-bottom: 8px;
+    }
+
+    .dean-student-affairs-page .section-heading p {
+        font-size: 0.9rem;
+    }
+
+    .dean-student-affairs-page .split-layout,
+    .dean-student-affairs-page .feature-grid,
+    .dean-student-affairs-page .dean-profile-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dean-student-affairs-page .callout,
+    .dean-student-affairs-page .feature-card,
+    .dean-student-affairs-page .dean-profile-card {
+        padding: 1rem;
+    }
+
+    .dean-student-affairs-page .dean-profile-card {
+        width: 100%;
+    }
+
+    .dean-student-affairs-page .dean-profile-image {
+        width: 100%;
+        min-height: 260px;
+        height: auto;
+    }
+
+    .dean-student-affairs-page .btn-row {
+        flex-direction: column;
+        gap: 0.6rem;
+    }
+
+    .dean-student-affairs-page .btn-row .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .dean-student-affairs-page .page-hero {
+        padding: 34px 0 18px;
+    }
+
+    .dean-student-affairs-page h1 {
+        font-size: clamp(1.75rem, 8vw, 2.15rem);
+    }
+
+    .dean-student-affairs-page h2 {
+        font-size: clamp(1.35rem, 6vw, 1.7rem);
+    }
+
+    .dean-student-affairs-page p,
+    .dean-student-affairs-page li {
+        font-size: 0.92rem;
+    }
+
+    .dean-student-affairs-page .dean-role-badge {
+        font-size: 0.7rem;
+    }
+
+    .dean-student-affairs-page .dean-profile-image {
+        min-height: 220px;
+    }
+
+    .dean-student-affairs-page .feature-card h3,
+    .dean-student-affairs-page .callout h2,
+    .dean-student-affairs-page .dean-profile-card h3 {
+        font-size: 1rem;
+    }
+}
+</style>
 
 <section
     class="page-hero"
@@ -29,7 +120,7 @@ include 'includes/header.php';
             <h2>Dean Office Contact</h2>
             <p>For department-level academic guidance, faculty coordination, and student support concerns, contact the dean office directly.</p>
             <p><strong>Email:</strong> deanoffice@cuc.edu.lr</p>
-            <p><strong>Phone:</strong> +231 77 000 0000</p>
+            <p><strong>Phone:</strong> +231 88 1846 653</p>
         </article>
     </div>
 </section>

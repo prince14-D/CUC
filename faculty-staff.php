@@ -1,8 +1,100 @@
 <?php
 $pageTitle = 'Faculty and Staff';
 $pageDescription = 'Meet the faculty and staff of Christian University College.';
+$bodyClass = 'faculty-staff-page';
 include 'includes/header.php';
 ?>
+
+<style>
+@media (max-width: 720px) {
+    .faculty-staff-page .page-hero {
+        padding: 40px 0 20px;
+    }
+
+    .faculty-staff-page .section {
+        padding: 1.5rem 0;
+    }
+
+    .faculty-staff-page .section-heading {
+        margin-bottom: 1rem;
+        text-align: left;
+    }
+
+    .faculty-staff-page .section-heading h2 {
+        font-size: clamp(1.3rem, 4vw, 1.6rem);
+        margin-bottom: 8px;
+    }
+
+    .faculty-staff-page .section-heading p {
+        font-size: 0.9rem;
+    }
+
+    .faculty-staff-page .about-stats-grid,
+    .faculty-staff-page .news-grid,
+    .faculty-staff-page .feature-grid,
+    .faculty-staff-page .split-layout,
+    .faculty-staff-page .department-photo-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .faculty-staff-page .about-stat-card,
+    .faculty-staff-page .news-card,
+    .faculty-staff-page .feature-card,
+    .faculty-staff-page .callout,
+    .faculty-staff-page .department-photo-card {
+        padding: 1rem;
+    }
+
+    .faculty-staff-page .department-photo-image {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+    }
+
+    .faculty-staff-page .btn-row {
+        flex-direction: column;
+        gap: 0.6rem;
+    }
+
+    .faculty-staff-page .btn-row .btn,
+    .faculty-staff-page .callout .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .faculty-staff-page .page-hero {
+        padding: 34px 0 18px;
+    }
+
+    .faculty-staff-page h1 {
+        font-size: clamp(1.75rem, 8vw, 2.15rem);
+    }
+
+    .faculty-staff-page h2 {
+        font-size: clamp(1.35rem, 6vw, 1.7rem);
+    }
+
+    .faculty-staff-page p,
+    .faculty-staff-page li {
+        font-size: 0.92rem;
+    }
+
+    .faculty-staff-page .about-stat-card strong,
+    .faculty-staff-page .stat-number {
+        font-size: clamp(1.3rem, 7vw, 1.8rem);
+    }
+
+    .faculty-staff-page .news-card h3,
+    .faculty-staff-page .feature-card h3,
+    .faculty-staff-page .callout h2,
+    .faculty-staff-page .department-photo-card h3,
+    .faculty-staff-page .cta-inner h2 {
+        font-size: 1rem;
+    }
+}
+</style>
 
 <section
     class="page-hero"
@@ -17,19 +109,19 @@ include 'includes/header.php';
 <section class="section about-highlight-band">
     <div class="container about-stats-grid">
         <article class="about-stat-card">
-            <strong>250+</strong>
+            <strong class="stat-number" data-target="250" data-suffix="+">250+</strong>
             <span>Faculty and Staff</span>
         </article>
         <article class="about-stat-card">
-            <strong>6</strong>
+            <strong class="stat-number" data-target="6">6</strong>
             <span>Academic Colleges</span>
         </article>
         <article class="about-stat-card">
-            <strong>40+</strong>
+            <strong class="stat-number" data-target="40" data-suffix="+">40+</strong>
             <span>Programs Supported</span>
         </article>
         <article class="about-stat-card">
-            <strong>3,500+</strong>
+            <strong class="stat-number" data-target="3500" data-suffix="+">3,500+</strong>
             <span>Students Served</span>
         </article>
     </div>
@@ -205,7 +297,7 @@ include 'includes/header.php';
             <h2>Connect with Faculty and Staff Offices</h2>
             <p>For office-specific inquiries, guidance, or appointments, contact the university support teams.</p>
             <p><strong>Email:</strong> admissions@cuc.edu.lr</p>
-            <p><strong>Phone:</strong> +231 77 000 0000</p>
+            <p><strong>Phone:</strong> +231 88 1846 653</p>
             <a href="contact.php" class="btn btn-primary">Contact Our Team</a>
         </article>
     </div>

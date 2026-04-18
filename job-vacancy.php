@@ -1,8 +1,115 @@
 <?php
+require_once __DIR__ . '/includes/news_storage.php';
+
 $pageTitle = 'Job Vacancy';
 $pageDescription = 'Current job vacancies and career opportunities at Christian University College.';
+$bodyClass = 'job-vacancy-page';
+
+$activeJobs = cuc_get_active_job_vacancies();
+$departmentCount = count(
+    array_unique(
+        array_filter(
+            array_map(
+                static fn(array $job): string => trim((string)($job['department'] ?? '')),
+                $activeJobs
+            )
+        )
+    )
+);
+$onlineApplicationCount = count(
+    array_filter(
+        $activeJobs,
+        static fn(array $job): bool => trim((string)($job['application_url'] ?? '')) !== '' && trim((string)($job['application_url'] ?? '')) !== '#'
+    )
+);
+$emailApplicationCount = count(
+    array_filter(
+        $activeJobs,
+        static fn(array $job): bool => trim((string)($job['application_email'] ?? '')) !== ''
+    )
+);
+
 include 'includes/header.php';
 ?>
+
+<style>
+@media (max-width: 720px) {
+    .job-vacancy-page .page-hero {
+        padding: 40px 0 20px;
+    }
+
+    .job-vacancy-page .section {
+        padding: 1.5rem 0;
+    }
+
+    .job-vacancy-page .section-heading {
+        margin-bottom: 1rem;
+        text-align: left;
+    }
+
+    .job-vacancy-page .section-heading h2 {
+        font-size: clamp(1.3rem, 4vw, 1.6rem);
+        margin-bottom: 8px;
+    }
+
+    .job-vacancy-page .section-heading p {
+        font-size: 0.9rem;
+    }
+
+    .job-vacancy-page .about-stats-grid,
+    .job-vacancy-page .news-grid,
+    .job-vacancy-page .split-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .job-vacancy-page .about-stat-card,
+    .job-vacancy-page .news-card,
+    .job-vacancy-page .callout {
+        padding: 1rem;
+    }
+
+    .job-vacancy-page .btn-row {
+        flex-direction: column;
+        gap: 0.6rem;
+    }
+
+    .job-vacancy-page .btn-row .btn,
+    .job-vacancy-page .cta-inner .btn,
+    .job-vacancy-page .news-card .btn,
+    .job-vacancy-page .callout .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .job-vacancy-page .page-hero {
+        padding: 34px 0 18px;
+    }
+
+    .job-vacancy-page h1 {
+        font-size: clamp(1.75rem, 8vw, 2.15rem);
+    }
+
+    .job-vacancy-page h2 {
+        font-size: clamp(1.35rem, 6vw, 1.7rem);
+    }
+
+    .job-vacancy-page p,
+    .job-vacancy-page li {
+        font-size: 0.92rem;
+    }
+
+    .job-vacancy-page .about-stat-card strong {
+        font-size: clamp(1.3rem, 7vw, 1.8rem);
+    }
+
+    .job-vacancy-page .news-card h3,
+    .job-vacancy-page .callout h2,
+    .job-vacancy-page .cta-inner h2 {
+        font-size: 1rem;
+    }
+}
+</style>
 
 <section
     class="page-hero"
@@ -10,27 +117,27 @@ include 'includes/header.php';
     <div class="container">
         <span class="eyebrow">Careers</span>
         <h1>Job Vacancy Announcements</h1>
-        <p>Explore open positions at Christian University College and apply to join a mission-driven academic community.</p>
+        <p>Explore active openings at Christian University College and apply to join a mission-driven academic community.</p>
     </div>
 </section>
 
 <section class="section about-highlight-band">
     <div class="container about-stats-grid">
         <article class="about-stat-card">
-            <strong>6</strong>
+            <strong><?= (int)count($activeJobs) ?></strong>
             <span>Open Positions</span>
         </article>
         <article class="about-stat-card">
-            <strong>3</strong>
-            <span>Academic Openings</span>
+            <strong><?= (int)$departmentCount ?></strong>
+            <span>Departments</span>
         </article>
         <article class="about-stat-card">
-            <strong>2</strong>
-            <span>Administrative Openings</span>
+            <strong><?= (int)$onlineApplicationCount ?></strong>
+            <span>Online Applications</span>
         </article>
         <article class="about-stat-card">
-            <strong>1</strong>
-            <span>Student Services Opening</span>
+            <strong><?= (int)$emailApplicationCount ?></strong>
+            <span>Email Listings</span>
         </article>
     </div>
 </section>
@@ -40,70 +147,70 @@ include 'includes/header.php';
         <div class="section-heading">
             <span class="eyebrow">Current Openings</span>
             <h2>Available Roles at CUC</h2>
-            <p>Review role details, minimum requirements, and application deadlines below.</p>
+            <p>Review role details, requirements, and application deadlines below.</p>
         </div>
-        <div class="news-grid">
-            <article class="news-card reveal-on-scroll">
-                <p class="meta">Deadline: April 15, 2026</p>
-                <h3>Lecturer, Business Administration</h3>
-                <p>Teach undergraduate courses in management and entrepreneurship, supervise student projects, and contribute to curriculum development.</p>
-                <ul class="clean-list">
-                    <li>Master's degree (minimum) in Business or related field</li>
-                    <li>At least 3 years of university teaching experience</li>
-                    <li>Strong communication and mentoring skills</li>
-                </ul>
+
+        <?php if (empty($activeJobs)): ?>
+            <article class="callout reveal-on-scroll" style="max-width: 860px; margin: 0 auto;">
+                <h2>No active vacancies right now</h2>
+                <p>Admin can publish new openings from the News Admin page, and they will appear here automatically.</p>
+                <div class="btn-row">
+                    <a href="news-admin.php" class="btn btn-primary">Open Admin</a>
+                    <a href="contact.php" class="btn btn-light">Contact Office</a>
+                </div>
             </article>
-            <article class="news-card reveal-on-scroll">
-                <p class="meta">Deadline: April 18, 2026</p>
-                <h3>Lecturer, Computer Science</h3>
-                <p>Deliver practical and theory-based instruction in computing, and support innovation-focused student learning.</p>
-                <ul class="clean-list">
-                    <li>Master's degree in Computer Science or related field</li>
-                    <li>Experience in programming and systems courses</li>
-                    <li>Ability to support lab-based learning</li>
-                </ul>
-            </article>
-            <article class="news-card reveal-on-scroll">
-                <p class="meta">Deadline: April 20, 2026</p>
-                <h3>Assistant Registrar</h3>
-                <p>Support academic record processing, student enrollment coordination, and departmental reporting operations.</p>
-                <ul class="clean-list">
-                    <li>Bachelor's degree in Education, Management, or related field</li>
-                    <li>Experience with academic records systems</li>
-                    <li>High attention to detail and confidentiality</li>
-                </ul>
-            </article>
-            <article class="news-card reveal-on-scroll">
-                <p class="meta">Deadline: April 22, 2026</p>
-                <h3>Human Resources Officer</h3>
-                <p>Coordinate recruitment, onboarding, performance documentation, and staff welfare support services.</p>
-                <ul class="clean-list">
-                    <li>Bachelor's degree in Human Resource Management or related field</li>
-                    <li>Minimum 2 years HR experience</li>
-                    <li>Knowledge of labor regulations and HR procedures</li>
-                </ul>
-            </article>
-            <article class="news-card reveal-on-scroll">
-                <p class="meta">Deadline: April 25, 2026</p>
-                <h3>Student Affairs Counselor</h3>
-                <p>Provide counseling, mentorship, and referral support to students to promote wellbeing and academic persistence.</p>
-                <ul class="clean-list">
-                    <li>Bachelor's or Master's in Counseling, Psychology, or related field</li>
-                    <li>Experience working with young adults</li>
-                    <li>Strong interpersonal and case-management skills</li>
-                </ul>
-            </article>
-            <article class="news-card reveal-on-scroll">
-                <p class="meta">Deadline: April 28, 2026</p>
-                <h3>Lecturer, Biblical Studies (Theology)</h3>
-                <p>Teach theology and ministry courses, support spiritual formation, and contribute to college initiatives.</p>
-                <ul class="clean-list">
-                    <li>Master's degree (minimum) in Theology or Biblical Studies</li>
-                    <li>Proven ministry and teaching experience</li>
-                    <li>Commitment to faith-based education</li>
-                </ul>
-            </article>
-        </div>
+        <?php else: ?>
+            <div class="news-grid">
+                <?php foreach ($activeJobs as $job): ?>
+                    <?php
+                    $requirements = array_values(
+                        array_filter(
+                            preg_split('/\r\n|\r|\n/', (string)($job['requirements'] ?? '')) ?: [],
+                            static fn(string $item): bool => trim($item) !== ''
+                        )
+                    );
+                    $applicationUrl = trim((string)($job['application_url'] ?? ''));
+                    $applicationEmail = trim((string)($job['application_email'] ?? ''));
+                    if ($applicationUrl !== '' && $applicationUrl !== '#') {
+                        $applyHref = $applicationUrl;
+                        $applyLabel = 'Apply Online';
+                    } elseif ($applicationEmail !== '') {
+                        $applyHref = 'mailto:' . $applicationEmail;
+                        $applyLabel = 'Apply by Email';
+                    } else {
+                        $applyHref = 'contact.php';
+                        $applyLabel = 'Contact HR Office';
+                    }
+                    ?>
+                    <article class="news-card reveal-on-scroll">
+                        <p class="meta">Deadline: <?= htmlspecialchars(date('F j, Y', strtotime((string)$job['deadline'])), ENT_QUOTES, 'UTF-8') ?></p>
+                        <h3><?= htmlspecialchars((string)$job['title'], ENT_QUOTES, 'UTF-8') ?></h3>
+                        <?php if ((string)($job['department'] ?? '') !== ''): ?>
+                            <p><strong>Department:</strong> <?= htmlspecialchars((string)$job['department'], ENT_QUOTES, 'UTF-8') ?></p>
+                        <?php endif; ?>
+                        <?php if ((string)($job['location'] ?? '') !== ''): ?>
+                            <p><strong>Location:</strong> <?= htmlspecialchars((string)$job['location'], ENT_QUOTES, 'UTF-8') ?></p>
+                        <?php endif; ?>
+                        <?php if ((string)($job['employment_type'] ?? '') !== ''): ?>
+                            <p><strong>Type:</strong> <?= htmlspecialchars((string)$job['employment_type'], ENT_QUOTES, 'UTF-8') ?></p>
+                        <?php endif; ?>
+                        <p><?= htmlspecialchars((string)$job['summary'], ENT_QUOTES, 'UTF-8') ?></p>
+
+                        <?php if (!empty($requirements)): ?>
+                            <ul class="clean-list">
+                                <?php foreach ($requirements as $requirement): ?>
+                                    <li><?= htmlspecialchars(trim($requirement), ENT_QUOTES, 'UTF-8') ?></li>
+                                <?php endforeach; ?>
+                            </ul>
+                        <?php endif; ?>
+
+                        <a href="<?= htmlspecialchars($applyHref, ENT_QUOTES, 'UTF-8') ?>" class="btn btn-primary">
+                            <?= htmlspecialchars($applyLabel, ENT_QUOTES, 'UTF-8') ?>
+                        </a>
+                    </article>
+                <?php endforeach; ?>
+            </div>
+        <?php endif; ?>
     </div>
 </section>
 
@@ -113,15 +220,15 @@ include 'includes/header.php';
             <h2>How to Apply</h2>
             <ol class="clean-list ordered">
                 <li>Prepare your application letter and updated CV.</li>
-                <li>Attach academic credentials and two references.</li>
-                <li>Email your full application package before the listed deadline.</li>
+                <li>Attach academic credentials and any supporting documents.</li>
+                <li>Submit before the listed deadline using the application link or email.</li>
                 <li>Shortlisted candidates will be contacted for interview.</li>
             </ol>
         </article>
         <article class="callout reveal-on-scroll">
             <h2>Application Contact</h2>
             <p><strong>Email:</strong> careers@cuc.edu.lr</p>
-            <p><strong>Phone:</strong> +231 77 000 0000</p>
+            <p><strong>Phone:</strong> +231 88 1846 653</p>
             <p><strong>Office Hours:</strong> Monday to Friday, 8:30 AM - 4:30 PM</p>
             <a href="contact.php" class="btn btn-primary">Contact HR Office</a>
         </article>

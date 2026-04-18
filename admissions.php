@@ -1,8 +1,90 @@
 <?php
 $pageTitle = 'Admissions';
 $pageDescription = 'Admissions requirements, tuition guidance, and application steps for Christian University College.';
+$bodyClass = 'admissions-page';
 include 'includes/header.php';
 ?>
+
+<style>
+@media (max-width: 720px) {
+    .admissions-page .page-hero {
+        padding: 40px 0 20px;
+    }
+
+    .admissions-page .section {
+        padding: 1.5rem 0;
+    }
+
+    .admissions-page .section-heading {
+        margin-bottom: 1rem;
+        text-align: left;
+    }
+
+    .admissions-page .section-heading h2 {
+        font-size: clamp(1.3rem, 4vw, 1.6rem);
+        margin-bottom: 8px;
+    }
+
+    .admissions-page .section-heading p {
+        font-size: 0.9rem;
+    }
+
+    .admissions-page .about-stats-grid,
+    .admissions-page .split-layout,
+    .admissions-page .feature-grid,
+    .admissions-page .news-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .admissions-page .about-stat-card,
+    .admissions-page .feature-card,
+    .admissions-page .news-card,
+    .admissions-page .callout {
+        padding: 1rem;
+    }
+
+    .admissions-page .btn-row {
+        flex-direction: column;
+        gap: 0.6rem;
+    }
+
+    .admissions-page .btn-row .btn,
+    .admissions-page .cta-inner .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .admissions-page .page-hero {
+        padding: 34px 0 18px;
+    }
+
+    .admissions-page h1 {
+        font-size: clamp(1.75rem, 8vw, 2.15rem);
+    }
+
+    .admissions-page h2 {
+        font-size: clamp(1.35rem, 6vw, 1.7rem);
+    }
+
+    .admissions-page p,
+    .admissions-page li {
+        font-size: 0.92rem;
+    }
+
+    .admissions-page .about-stat-card strong {
+        font-size: clamp(1.3rem, 7vw, 1.8rem);
+    }
+
+    .admissions-page .feature-card h3,
+    .admissions-page .news-card h3,
+    .admissions-page .callout h2,
+    .admissions-page .callout h3,
+    .admissions-page .cta-inner h2 {
+        font-size: 1rem;
+    }
+}
+</style>
 
 <section
     class="page-hero"
@@ -130,7 +212,7 @@ include 'includes/header.php';
             <h2>Need Help?</h2>
             <p>Our admissions team is available to guide you through application, documentation, and next steps.</p>
             <p><strong>Email:</strong> admissions@cuc.edu.lr</p>
-            <p><strong>Phone:</strong> +231 77 000 0000</p>
+            <p><strong>Phone:</strong> +231 88 1846 653</p>
         </article>
         <article class="callout reveal-on-scroll">
             <h2>Visit Campus Before Applying</h2>

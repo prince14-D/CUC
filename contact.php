@@ -1,6 +1,7 @@
 <?php
 $pageTitle = 'Contact';
 $pageDescription = 'Contact Christian University College admissions, offices, and support services.';
+$bodyClass = 'contact-page';
 
 $formData = [
 	'full_name' => '',
@@ -12,10 +13,10 @@ $formStatus = '';
 $formMessage = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-	$formData['full_name'] = trim($_POST['full_name'] ?? '');
-	$formData['email'] = trim($_POST['email'] ?? '');
-	$formData['program'] = trim($_POST['program'] ?? '');
-	$formData['message'] = trim($_POST['message'] ?? '');
+	$formData['full_name'] = trim((string)($_POST['full_name'] ?? ''));
+	$formData['email'] = trim((string)($_POST['email'] ?? ''));
+	$formData['program'] = trim((string)($_POST['program'] ?? ''));
+	$formData['message'] = trim((string)($_POST['message'] ?? ''));
 
 	$programLabels = [
 		'business' => 'Business and Management',
@@ -70,6 +71,113 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 include 'includes/header.php';
 ?>
 
+<style>
+@media (max-width: 720px) {
+	.contact-page .page-hero {
+		padding: 40px 0 20px;
+	}
+
+	.contact-page .section {
+		padding: 1.5rem 0;
+	}
+
+	.contact-page .section-heading {
+		margin-bottom: 1rem;
+		text-align: left;
+	}
+
+	.contact-page .section-heading h2 {
+		font-size: clamp(1.3rem, 4vw, 1.6rem);
+		margin-bottom: 8px;
+	}
+
+	.contact-page .section-heading p {
+		font-size: 0.9rem;
+	}
+
+	.contact-page .about-stats-grid,
+	.contact-page .news-grid,
+	.contact-page .feature-grid,
+	.contact-page .split-layout,
+	.contact-page .map-detail-layout {
+		grid-template-columns: 1fr;
+	}
+
+	.contact-page .about-stat-card,
+	.contact-page .news-card,
+	.contact-page .feature-card,
+	.contact-page .callout,
+	.contact-page .split-layout > article {
+		padding: 1rem;
+	}
+
+	.contact-page .contact-map-wrap {
+		border-radius: 12px;
+		overflow: hidden;
+	}
+
+	.contact-page .contact-map {
+		min-height: 280px;
+	}
+
+	.contact-page .contact-hero-actions,
+	.contact-page .contact-visit-actions,
+	.contact-page .btn-row {
+		flex-direction: column;
+		gap: 0.6rem;
+	}
+
+	.contact-page .btn-row .btn,
+	.contact-page .contact-hero-actions .btn,
+	.contact-page .contact-visit-actions .btn,
+	.contact-page .contact-form button {
+		width: 100%;
+	}
+}
+
+@media (max-width: 480px) {
+	.contact-page .page-hero {
+		padding: 34px 0 18px;
+	}
+
+	.contact-page h1 {
+		font-size: clamp(1.75rem, 8vw, 2.15rem);
+	}
+
+	.contact-page h2 {
+		font-size: clamp(1.35rem, 6vw, 1.7rem);
+	}
+
+	.contact-page p,
+	.contact-page li,
+	.contact-page label,
+	.contact-page input,
+	.contact-page select,
+	.contact-page textarea,
+	.contact-page button {
+		font-size: 0.92rem;
+	}
+
+	.contact-page .about-stat-card strong {
+		font-size: clamp(1.2rem, 6vw, 1.6rem);
+		line-height: 1.2;
+		display: block;
+	}
+
+	.contact-page .news-card h3,
+	.contact-page .feature-card h3,
+	.contact-page .callout h3,
+	.contact-page .callout h2,
+	.contact-page .cta-inner h2 {
+		font-size: 1rem;
+	}
+
+	.contact-page .contact-map {
+		min-height: 240px;
+	}
+}
+</style>
+
 <section
 	class="page-hero"
 	style="background: linear-gradient(120deg, rgba(20, 27, 45, 0.9), rgba(140, 21, 21, 0.82)), url('assets/images/slider2.jpeg') center/cover no-repeat;">
@@ -78,8 +186,8 @@ include 'includes/header.php';
 		<h1>We Are Here to Support You</h1>
 		<p>Reach our admissions office, registrar, and student services for personalized guidance and timely support.</p>
 		<div class="btn-row contact-hero-actions">
-			<a href="tel:+231770000000" class="btn btn-light">Call Admissions</a>
-			<a href="https://wa.me/231770000000" class="btn btn-primary">WhatsApp Us</a>
+			<a href="tel:+231881846653" class="btn btn-light">Call Admissions</a>
+			<a href="https://wa.me/231881846653" class="btn btn-primary">WhatsApp Us</a>
 		</div>
 	</div>
 </section>
@@ -122,13 +230,13 @@ include 'includes/header.php';
 		<article class="news-card reveal-on-scroll">
 			<h3>Admissions Office</h3>
 			<p>admissions@cuc.edu.lr</p>
-			<p>+231 77 000 0000</p>
+			<p>+231 88 1846 653</p>
 			<a href="mailto:admissions@cuc.edu.lr" class="link-arrow">Email Admissions</a>
 		</article>
 		<article class="news-card reveal-on-scroll">
 			<h3>Student Affairs</h3>
 			<p>studentsupport@cuc.edu.lr</p>
-			<p>+231 88 000 0000</p>
+			<p>+231 88 1846 653</p>
 			<a href="mailto:studentsupport@cuc.edu.lr" class="link-arrow">Email Student Affairs</a>
 		</article>
 		</div>
@@ -179,10 +287,10 @@ include 'includes/header.php';
 				and one-on-one meetings with advisors.
 			</p>
 			<p><strong>Email:</strong> visit@cuc.edu.lr</p>
-			<p><strong>Phone:</strong> +231 55 000 0000</p>
+			<p><strong>Phone:</strong> +231 88 1846 653</p>
 			<div class="btn-row contact-visit-actions">
 				<a href="admissions.php" class="btn btn-light">Plan Your Visit</a>
-				<a href="tel:+231550000000" class="btn btn-primary">Call Visit Desk</a>
+				<a href="tel:+231881846653" class="btn btn-primary">Call Visit Desk</a>
 			</div>
 		</article>
 	</div>
@@ -217,7 +325,7 @@ include 'includes/header.php';
 			<article class="callout reveal-on-scroll">
 				<h3>Map Support</h3>
 				<p>If you need help finding campus, contact our front desk before your trip.</p>
-				<p><strong>Front Desk:</strong> +231 77 111 1111</p>
+				<p><strong>Front Desk:</strong> +231 88 1846 653</p>
 				<a href="https://maps.google.com/?q=Paynesville+City+Montserrado+Liberia" class="btn btn-primary" target="_blank" rel="noopener">Open Full Map</a>
 			</article>
 		</div>
@@ -271,7 +379,7 @@ include 'includes/header.php';
 		<p>Our team is ready to answer your questions and help you take the next step.</p>
 		<div class="btn-row">
 			<a href="mailto:admissions@cuc.edu.lr" class="btn btn-light">Email Us</a>
-			<a href="tel:+231770000000" class="btn btn-primary">Call Now</a>
+			<a href="tel:+231881846653" class="btn btn-primary">Call Now</a>
 		</div>
 	</div>
 </section>

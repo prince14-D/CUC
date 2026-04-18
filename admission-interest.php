@@ -179,7 +179,7 @@ include 'includes/header.php';
                 <input type="email" id="email" name="email" value="<?= htmlspecialchars($formData['email'], ENT_QUOTES, 'UTF-8') ?>" required>
 
                 <label for="phone">Phone Number</label>
-                <input type="text" id="phone" name="phone" value="<?= htmlspecialchars($formData['phone'], ENT_QUOTES, 'UTF-8') ?>" placeholder="+231...">
+                <input type="text" id="phone" name="phone" value="<?= htmlspecialchars($formData['phone'], ENT_QUOTES, 'UTF-8') ?>" placeholder="+231 88 1846 653">
 
                 <label for="program-level">Program Level *</label>
                 <select id="program-level" name="program_level" required>
@@ -229,7 +229,7 @@ include 'includes/header.php';
                 <li>Our team shares next-step details for application and document submission.</li>
             </ul>
             <p><strong>Email:</strong> admissions@cuc.edu.lr</p>
-            <p><strong>Phone:</strong> +231 77 000 0000</p>
+            <p><strong>Phone:</strong> +231 88 1846 653</p>
             <a href="admissions.php" class="btn btn-light">Back to Admissions</a>
         </article>
     </div>

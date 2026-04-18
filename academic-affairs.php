@@ -1,8 +1,104 @@
 <?php
 $pageTitle = 'Academic Affairs';
 $pageDescription = 'Academic Affairs at Christian University College.';
+$bodyClass = 'academic-affairs-page';
 include 'includes/header.php';
 ?>
+
+<style>
+@media (max-width: 720px) {
+    .academic-affairs-page .page-hero {
+        padding: 40px 0 20px;
+    }
+
+    .academic-affairs-page .section {
+        padding: 1.5rem 0;
+    }
+
+    .academic-affairs-page .section-heading {
+        margin-bottom: 1rem;
+        text-align: left;
+    }
+
+    .academic-affairs-page .section-heading h2 {
+        font-size: clamp(1.3rem, 4vw, 1.6rem);
+        margin-bottom: 8px;
+    }
+
+    .academic-affairs-page .section-heading p {
+        font-size: 0.9rem;
+    }
+
+    .academic-affairs-page .about-stats-grid,
+    .academic-affairs-page .split-layout,
+    .academic-affairs-page .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .academic-affairs-page .about-stat-card,
+    .academic-affairs-page .feature-card,
+    .academic-affairs-page .callout,
+    .academic-affairs-page .president-message {
+        padding: 1rem;
+    }
+
+    .academic-affairs-page .president-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .academic-affairs-page .president-photo-wrap {
+        max-width: 100%;
+    }
+
+    .academic-affairs-page .president-photo {
+        min-height: 240px;
+        height: auto;
+    }
+
+    .academic-affairs-page .btn-row {
+        flex-direction: column;
+        gap: 0.6rem;
+    }
+
+    .academic-affairs-page .btn-row .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .academic-affairs-page .page-hero {
+        padding: 34px 0 18px;
+    }
+
+    .academic-affairs-page h1 {
+        font-size: clamp(1.75rem, 8vw, 2.15rem);
+    }
+
+    .academic-affairs-page h2 {
+        font-size: clamp(1.35rem, 6vw, 1.7rem);
+    }
+
+    .academic-affairs-page p,
+    .academic-affairs-page li {
+        font-size: 0.92rem;
+    }
+
+    .academic-affairs-page .about-stat-card strong {
+        font-size: clamp(1.3rem, 7vw, 1.8rem);
+    }
+
+    .academic-affairs-page .president-photo {
+        min-height: 200px;
+    }
+
+    .academic-affairs-page .feature-card h3,
+    .academic-affairs-page .callout h2,
+    .academic-affairs-page .president-message h2 {
+        font-size: 1rem;
+    }
+}
+</style>
 
 <section
     class="page-hero"
@@ -126,7 +222,7 @@ include 'includes/header.php';
             <h2>Need Immediate Help?</h2>
             <p>Contact the Academic Affairs office directly for advising, records clarification, or curriculum support.</p>
             <p><strong>Email:</strong> academicaffairs@cuc.edu.lr</p>
-            <p><strong>Phone:</strong> +231 77 000 0000</p>
+            <p><strong>Phone:</strong> +231 88 1846 653</p>
         </article>
     </div>
 </section>

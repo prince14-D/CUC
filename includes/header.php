@@ -3,6 +3,7 @@ $pageTitle = isset($pageTitle) ? $pageTitle . ' | Christian University College' 
 $pageDescription = isset($pageDescription)
     ? $pageDescription
     : 'Christian University College offers faith-based, career-ready, and globally connected higher education in Liberia.';
+$bodyClass = isset($bodyClass) ? trim((string)$bodyClass) : '';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +20,7 @@ $pageDescription = isset($pageDescription)
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body>
+<body class="<?= htmlspecialchars($bodyClass, ENT_QUOTES, 'UTF-8') ?>">
 <header class="site-header">
     <div class="container nav-wrap">
         <a href="index.php" class="brand" aria-label="Christian University College home page">
@@ -85,6 +86,7 @@ $pageDescription = isset($pageDescription)
                     <a href="job-vacancy.php">Job Vacancy</a>
                 </div>
             </div>
+            <a href="donation.php">Donate</a>
             <a href="contact.php">Contact</a>
             <a href="https://portal.yourschool.com" class="portal-btn">Student Portal</a>
         </nav>

@@ -97,11 +97,8 @@ document.addEventListener('DOMContentLoaded', function () {
 		}
 	}
 
-	var statsBand = document.querySelector('.stats-band');
-	if (statsBand) {
-		var statNumbers = statsBand.querySelectorAll('.stat-number');
-		var hasAnimated = false;
-
+	var statContainers = document.querySelectorAll('.stats-band, .about-highlight-band');
+	if (statContainers.length) {
 		function formatStat(value) {
 			return value.toLocaleString();
 		}
@@ -134,30 +131,35 @@ document.addEventListener('DOMContentLoaded', function () {
 			window.requestAnimationFrame(tick);
 		}
 
-		function startStatsAnimation() {
-			if (hasAnimated) {
+		function startStatsAnimation(container) {
+			if (container.getAttribute('data-stats-animated') === 'true') {
 				return;
 			}
-			hasAnimated = true;
-			statsBand.classList.add('is-visible');
-			statNumbers.forEach(function (item) {
+
+			container.setAttribute('data-stats-animated', 'true');
+			container.classList.add('is-visible');
+			container.querySelectorAll('.stat-number').forEach(function (item) {
 				animateValue(item);
 			});
 		}
 
 		if ('IntersectionObserver' in window) {
-			var observer = new IntersectionObserver(function (entries) {
+			var statObserver = new IntersectionObserver(function (entries, observer) {
 				entries.forEach(function (entry) {
 					if (entry.isIntersecting) {
-						startStatsAnimation();
-						observer.disconnect();
+						startStatsAnimation(entry.target);
+						observer.unobserve(entry.target);
 					}
 				});
 			}, { threshold: 0.35 });
 
-			observer.observe(statsBand);
+			statContainers.forEach(function (container) {
+				statObserver.observe(container);
+			});
 		} else {
-			startStatsAnimation();
+			statContainers.forEach(function (container) {
+				startStatsAnimation(container);
+			});
 		}
 	}
 
